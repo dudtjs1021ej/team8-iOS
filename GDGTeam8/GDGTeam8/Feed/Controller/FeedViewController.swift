@@ -6,9 +6,11 @@
 //
 
 import UIKit
+import Alamofire
 
 class FeedViewController: UIViewController {
   @IBOutlet weak var feedCollectionView: UICollectionView!
+  var feeds: [Feed] = []
   
     override func viewDidLoad() {
       super.viewDidLoad()
@@ -24,16 +26,19 @@ class FeedViewController: UIViewController {
   
   override func viewWillAppear(_ animated: Bool) {
     self.navigationController?.isNavigationBarHidden = true
+    getFeed()
+    
   }
 }
 
 extension FeedViewController: UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout {
   func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-    return 10
+    return feeds.count
   }
   
   func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
     guard let cell = feedCollectionView.dequeueReusableCell(withReuseIdentifier: "FeedCell", for: indexPath) as? FeedCell else { return UICollectionViewCell() }
+    cell.titleLabel.text = feeds[indexPath.row].title
     return cell
   }
   
@@ -46,5 +51,26 @@ extension FeedViewController: UICollectionViewDelegate, UICollectionViewDataSour
     vc.hidesBottomBarWhenPushed = true
     self.navigationController?.pushViewController(vc, animated: true)
 
+  }
+}
+
+
+extension FeedViewController {
+  // getFeed
+  func getFeed() {
+    AF.request("http://3.34.197.35:3000/feeds", method: .get)
+      .validate()
+      .responseDecodable(of: FeedResponse.self) { response in
+        print(response)
+        switch response.result {
+        case .success(let result):
+          print(result)
+          self.feeds = result.feeds
+          self.feedCollectionView.reloadData()
+
+        case .failure(let error):
+          print("getFeed failure \(error.localizedDescription)")
+        }
+      }
   }
 }

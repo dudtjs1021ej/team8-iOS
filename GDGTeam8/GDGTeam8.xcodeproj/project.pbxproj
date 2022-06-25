@@ -42,6 +42,7 @@
 		FA1D0CAF286771EF00DE5516 /* FeedCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA1D0CAD286771EF00DE5516 /* FeedCell.swift */; };
 		FA1D0CB0286771EF00DE5516 /* FeedCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = FA1D0CAE286771EF00DE5516 /* FeedCell.xib */; };
 		FA1D0CB72867785000DE5516 /* UIColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA1D0CB62867785000DE5516 /* UIColor.swift */; };
+		FA1D0CBC28677D2800DE5516 /* FeedResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA1D0CBB28677D2800DE5516 /* FeedResponse.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -80,6 +81,7 @@
 		FA1D0CAD286771EF00DE5516 /* FeedCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedCell.swift; sourceTree = "<group>"; };
 		FA1D0CAE286771EF00DE5516 /* FeedCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = FeedCell.xib; sourceTree = "<group>"; };
 		FA1D0CB62867785000DE5516 /* UIColor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIColor.swift; sourceTree = "<group>"; };
+		FA1D0CBB28677D2800DE5516 /* FeedResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedResponse.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -231,9 +233,9 @@
 		FA1D0C922866FE7700DE5516 /* Feed */ = {
 			isa = PBXGroup;
 			children = (
+				FA1D0CB828677CFD00DE5516 /* Model */,
 				FA1D0CAC286771D900DE5516 /* View */,
-				FA1D0C932866FED200DE5516 /* FeedViewController.swift */,
-				FA1D0C9E286703AE00DE5516 /* FeedViewController.storyboard */,
+				FA1D0CB928677D0200DE5516 /* Controller */,
 			);
 			path = Feed;
 			sourceTree = "<group>";
@@ -250,8 +252,8 @@
 		FA1D0CAC286771D900DE5516 /* View */ = {
 			isa = PBXGroup;
 			children = (
-				FA1D0CAD286771EF00DE5516 /* FeedCell.swift */,
-				FA1D0CAE286771EF00DE5516 /* FeedCell.xib */,
+				FA1D0CBA28677D1300DE5516 /* Cell */,
+				FA1D0C9E286703AE00DE5516 /* FeedViewController.storyboard */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -262,6 +264,31 @@
 				FA1D0CB62867785000DE5516 /* UIColor.swift */,
 			);
 			path = Extension;
+			sourceTree = "<group>";
+		};
+		FA1D0CB828677CFD00DE5516 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				FA1D0CBB28677D2800DE5516 /* FeedResponse.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		FA1D0CB928677D0200DE5516 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				FA1D0C932866FED200DE5516 /* FeedViewController.swift */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		FA1D0CBA28677D1300DE5516 /* Cell */ = {
+			isa = PBXGroup;
+			children = (
+				FA1D0CAD286771EF00DE5516 /* FeedCell.swift */,
+				FA1D0CAE286771EF00DE5516 /* FeedCell.xib */,
+			);
+			path = Cell;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -365,6 +392,7 @@
 				1BB34F9B28676CBE00489FF0 /* CatModelResult.swift in Sources */,
 				FA1D0C5E2866D9E200DE5516 /* AppDelegate.swift in Sources */,
 				1B2E52B728672EC100A636E6 /* CatMainPageViewController.swift in Sources */,
+				FA1D0CBC28677D2800DE5516 /* FeedResponse.swift in Sources */,
 				1B2E52B32866FB9600A636E6 /* Location.swift in Sources */,
 				1B2E52BF2867554300A636E6 /* CatRequestModel.swift in Sources */,
 				1B2E52AE2866F20000A636E6 /* CatMainViewController.swift in Sources */,
