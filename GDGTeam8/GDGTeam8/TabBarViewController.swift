@@ -14,7 +14,10 @@ class TabBarViewController: UITabBarController, UITabBarControllerDelegate {
     self.view.backgroundColor = .white
     print("MainTabBarController - viewDidLoad() called")
     
-    // let firstNC = UINavigationController.init(rootViewController: MapViewController())
+    let catMainStoryboard = UIStoryboard(name: "CatMain", bundle: nil)
+    let catMainVC = catMainStoryboard.instantiateViewController(withIdentifier: "CatMainViewController")
+    
+    
     let plusStoryboard = UIStoryboard(name: "PlusViewController", bundle: nil)
     let plusVC = plusStoryboard.instantiateViewController(withIdentifier: "PlusViewController")
     
@@ -22,18 +25,19 @@ class TabBarViewController: UITabBarController, UITabBarControllerDelegate {
     let FeedStoryboard = UIStoryboard(name: "FeedViewController", bundle: nil)
     let feedVC = FeedStoryboard.instantiateViewController(withIdentifier: "FeedViewController")
     
+    let firstNC = UINavigationController.init(rootViewController: catMainVC)
     let secondNC = UINavigationController.init(rootViewController: plusVC)
     let thirdNC = UINavigationController.init(rootViewController: feedVC)
     
     
-    self.viewControllers = [secondNC, thirdNC]
+    self.viewControllers = [firstNC, secondNC, thirdNC]
     
-    // let firstTabBarItem = UITabBarItem(title: "첫번째", image: UIImage(systemName: "airplayaudio"), tag: 0)
+    let firstTabBarItem = UITabBarItem(title: "Map", image: UIImage(systemName: "map.fill"), tag: 0)
     let secondTabBarItem = UITabBarItem(title: "", image: UIImage(systemName: "plus.circle.fill"), tag: 1)
-    let thirdTabBarItem = UITabBarItem(title: "Feed", image: UIImage(systemName: ""), tag: 2)
+    let thirdTabBarItem = UITabBarItem(title: "Feed", image: UIImage(systemName: "list.dash"), tag: 2)
     
     
-    // firstNC.tabBarItem = firstTabBarItem
+    firstNC.tabBarItem = firstTabBarItem
     secondNC.tabBarItem = secondTabBarItem
     thirdNC.tabBarItem = thirdTabBarItem
     
