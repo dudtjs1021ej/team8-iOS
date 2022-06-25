@@ -32,9 +32,12 @@ class DescriptionViewController: UIViewController {
       print(loc_x)
       print(loc_y)
       print(description)
+      
+      let PostCatRequest = PostCatRequest(image: image, name: name, loc_x: loc_x, loc_y: loc_y, description: description)
+      
+      postCat(PostCatRequest)
+      
     }
-    
-
     
     
     self.view.window!.rootViewController?.dismiss(animated: false, completion: nil)
@@ -65,14 +68,15 @@ extension DescriptionViewController {
     AF.upload(
       multipartFormData: { multipartFormData in
         multipartFormData.append(parameters.name.data(using: .utf8)!, withName: "name")
-        multipartFormData.append(String(parameters.loc_x).data(using: .utf8)!, withName: "loc_x")
-        multipartFormData.append(String(parameters.loc_y).data(using: .utf8)!, withName: "loc_y")
+        multipartFormData.append(parameters.loc_x.data(using: .utf8)!, withName: "loc_x")
+        multipartFormData.append(parameters.loc_y.data(using: .utf8)!, withName: "loc_y")
         multipartFormData.append(parameters.description.data(using: .utf8)!, withName: "description")
         
 //        if let image = parameters.image {
 //          let aa = image
+        let filename = String(Date().timeIntervalSince1970)
         multipartFormData.append(parameters.image, withName: "image",
-                                   fileName:"1111.jpeg", mimeType: "image/jpeg")
+                                   fileName:"\(filename).jpeg", mimeType: "image/jpeg")
 //        } else {
 //          multipartFormData.append("".data(using: .utf8)!, withName: "profileImg", fileName: "", mimeType: "")
 //        }
