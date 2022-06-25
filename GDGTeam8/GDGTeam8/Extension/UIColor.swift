@@ -20,4 +20,5 @@ extension UIColor {
     
     // MARK: 메인 테마 색 또는 자주 쓰는 색을 정의
   class var borderGray: UIColor { UIColor(hex: 0xe2e2e2) }
+  class var mainColor: UIColor { UIColor(hex: 0xff7b40) }
 }

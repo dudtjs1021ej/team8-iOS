@@ -13,6 +13,8 @@ class TabBarViewController: UITabBarController, UITabBarControllerDelegate {
   
   override func viewDidLoad() {
     super.viewDidLoad()
+    UITabBar.appearance().tintColor = .mainColor
+    
     self.delegate = self
     self.view.backgroundColor = .white
     print("MainTabBarController - viewDidLoad() called")
@@ -27,7 +29,7 @@ class TabBarViewController: UITabBarController, UITabBarControllerDelegate {
     
     let FeedStoryboard = UIStoryboard(name: "FeedViewController", bundle: nil)
     let feedVC = FeedStoryboard.instantiateViewController(withIdentifier: "FeedViewController")
-   // let feedVC = CatDetailViewController()
+
     let firstNC = UINavigationController.init(rootViewController: catMainVC)
     let secondNC = UINavigationController.init(rootViewController: plusVC)
     let thirdNC = UINavigationController.init(rootViewController: feedVC)
@@ -36,6 +38,7 @@ class TabBarViewController: UITabBarController, UITabBarControllerDelegate {
     
     let firstTabBarItem = UITabBarItem(title: "Map", image: UIImage(systemName: "map.fill"), tag: 0)
     let secondTabBarItem = UITabBarItem(title: "", image: UIImage(systemName: "plus.circle.fill"), tag: 1)
+    
     let thirdTabBarItem = UITabBarItem(title: "Feed", image: UIImage(systemName: "list.dash"), tag: 2)
     
     
