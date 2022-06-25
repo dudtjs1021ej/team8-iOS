@@ -10,8 +10,8 @@ import Foundation
 struct PostCatRequest: Codable {
   let image: Data
   let name: String
-  let loc_x: Double
-  let loc_y: Double
+  let loc_x: String
+  let loc_y: String
   let description: String
 }
 
