@@ -43,6 +43,7 @@ extension PlusViewController: UIImagePickerControllerDelegate,UINavigationContro
   func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
     if let image = info[UIImagePickerController.InfoKey.originalImage] as? UIImage {
       catImageView.image = image
+      PostCat.shared.image = image.jpegData(compressionQuality: 1.0)
       cameraButton.isHidden = true
     }
     

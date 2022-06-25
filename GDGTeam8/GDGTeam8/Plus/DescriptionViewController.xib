@@ -10,6 +10,8 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="DescriptionViewController" customModule="GDGTeam8" customModuleProvider="target">
             <connections>
+                <outlet property="completeButton" destination="nsP-jo-253" id="uWx-lH-tVe"/>
+                <outlet property="textField" destination="3Y7-7a-aVW" id="YpA-is-n0T"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
         </placeholder>
@@ -19,7 +21,7 @@
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="D4F-dj-fKT">
-                    <rect key="frame" x="30" y="74" width="51" height="21"/>
+                    <rect key="frame" x="15" y="74" width="51" height="21"/>
                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                     <color key="tintColor" red="0.38823529410000002" green="0.38823529410000002" blue="0.38823529410000002" alpha="0.84705882349999995" colorSpace="calibratedRGB"/>
                     <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
@@ -71,12 +73,12 @@
                     <nil key="highlightedColor"/>
                 </label>
                 <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="얼굴 무늬, 선호 간식 등" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="3Y7-7a-aVW">
-                    <rect key="frame" x="39" y="284.5" width="336" height="18.5"/>
+                    <rect key="frame" x="25" y="284.5" width="350" height="18.5"/>
                     <fontDescription key="fontDescription" type="system" pointSize="14"/>
                     <textInputTraits key="textInputTraits"/>
                 </textField>
                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1HV-cw-cxq">
-                    <rect key="frame" x="24" y="314" width="335" height="29"/>
+                    <rect key="frame" x="24" y="328" width="335" height="29"/>
                     <string key="text">다른 사람들이 고양이를 알아볼 수 있게 특징이나, 고양이가 먹지 못하는
 간식 등 주의점을 작성해주세요:)</string>
                     <fontDescription key="fontDescription" type="system" pointSize="12"/>
@@ -91,7 +93,7 @@
                     </constraints>
                 </imageView>
                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="nsP-jo-253">
-                    <rect key="frame" x="16" y="440" width="382" height="48"/>
+                    <rect key="frame" x="16" y="766" width="382" height="48"/>
                     <color key="backgroundColor" red="0.97647058819999999" green="0.43137254899999999" blue="0.14901960780000001" alpha="0.84705882349999995" colorSpace="calibratedRGB"/>
                     <constraints>
                         <constraint firstAttribute="height" constant="48" id="pKk-b1-qaa"/>
@@ -100,6 +102,9 @@
                     <color key="tintColor" red="0.97647058819999999" green="0.97647058819999999" blue="0.97647058819999999" alpha="1" colorSpace="calibratedRGB"/>
                     <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
                     <state key="normal" title="완료"/>
+                    <connections>
+                        <action selector="completeButtonTouchUpInside:" destination="-1" eventType="touchUpInside" id="0Qx-kI-Ts3"/>
+                    </connections>
                 </button>
             </subviews>
             <viewLayoutGuide key="safeArea" id="fnl-2z-Ty3"/>
@@ -108,17 +113,17 @@
                 <constraint firstItem="hsf-do-z40" firstAttribute="top" secondItem="EaH-nT-fQ7" secondAttribute="bottom" constant="8" id="3Dj-DY-bQq"/>
                 <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="nsP-jo-253" secondAttribute="trailing" constant="16" id="3KN-kl-eu8"/>
                 <constraint firstItem="3Y7-7a-aVW" firstAttribute="top" secondItem="hsf-do-z40" secondAttribute="bottom" constant="72" id="8Yh-R0-Xf7"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="bottom" secondItem="nsP-jo-253" secondAttribute="bottom" constant="48" id="BWG-p4-BTh"/>
                 <constraint firstItem="EaH-nT-fQ7" firstAttribute="top" secondItem="D4F-dj-fKT" secondAttribute="bottom" constant="22" id="FCb-qU-2lg"/>
                 <constraint firstItem="D4F-dj-fKT" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" constant="30" id="GjT-aY-2Ir"/>
-                <constraint firstItem="D4F-dj-fKT" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="30" id="KV5-ul-ynK"/>
+                <constraint firstItem="D4F-dj-fKT" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="15" id="KV5-ul-ynK"/>
                 <constraint firstItem="1HV-cw-cxq" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="24" id="MEw-zr-kht"/>
                 <constraint firstItem="nsP-jo-253" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="16" id="S3v-vt-PYi"/>
                 <constraint firstItem="hsf-do-z40" firstAttribute="leading" secondItem="EaH-nT-fQ7" secondAttribute="leading" id="Wgt-dU-w6q"/>
-                <constraint firstItem="3Y7-7a-aVW" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="39" id="bkc-Wm-7jg"/>
+                <constraint firstItem="3Y7-7a-aVW" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="25" id="bkc-Wm-7jg"/>
                 <constraint firstItem="EaH-nT-fQ7" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="16" id="c6E-J0-FO8"/>
-                <constraint firstItem="1HV-cw-cxq" firstAttribute="top" secondItem="3Y7-7a-aVW" secondAttribute="bottom" constant="11" id="cg3-Hg-qBA"/>
+                <constraint firstItem="1HV-cw-cxq" firstAttribute="top" secondItem="3Y7-7a-aVW" secondAttribute="bottom" constant="25" id="cg3-Hg-qBA"/>
                 <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="3Y7-7a-aVW" secondAttribute="trailing" constant="39" id="mdQ-V6-9YD"/>
-                <constraint firstItem="nsP-jo-253" firstAttribute="top" secondItem="1HV-cw-cxq" secondAttribute="bottom" constant="97" id="tSK-pd-C0t"/>
             </constraints>
             <point key="canvasLocation" x="132" y="64"/>
         </view>
