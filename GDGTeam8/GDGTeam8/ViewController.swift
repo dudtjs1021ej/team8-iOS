@@ -14,11 +14,6 @@ class ViewController: UIViewController {
     // Do any additional setup after loading the view.
   }
 
-  @IBAction func clickedButton(_ sender: Any) {
-    let vc = CatDetailViewController()
-    vc.modalPresentationStyle = .fullScreen
-    present(vc, animated: true, completion: nil)
-  }
-  
+
 }
 
