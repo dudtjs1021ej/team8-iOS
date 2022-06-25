@@ -54,9 +54,15 @@ extension PlusViewController: UIImagePickerControllerDelegate,UINavigationContro
     let photo = PHAsset.fetchAssets(with: .image, options: fetchOptions)
     
     photo.enumerateObjects { asset, _, _ in
-      print(asset.location?.coordinate.longitude, asset.location?.coordinate.latitude)
+      PostCat.shared.loc_x = "\(asset.location?.coordinate.longitude ?? 0)"
+      PostCat.shared.loc_y = "\(asset.location?.coordinate.latitude ?? 0)"
     }
     
-    dismiss(animated: true, completion: nil)
+    dismiss(animated: true)
+    
+    let vc = CatNameViewController()
+    vc.modalPresentationStyle = .fullScreen
+    
+    present(vc, animated: true, completion: nil)
   }
 }
