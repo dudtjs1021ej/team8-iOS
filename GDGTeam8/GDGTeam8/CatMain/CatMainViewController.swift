@@ -58,6 +58,27 @@ class CatMainViewController: UIViewController {
         locationManager.delegate = self
         locationManager.requestWhenInUseAuthorization()
         
+        updatePin()
+        
+        pageContainer.alpha = 0
+        mainMapView.delegate = self
+        
+        view.addSubview(addButton)
+        addButtonOriginalPosition = addButton.frame.origin
+        addButtonMovedPosition = addButtonOriginalPosition
+        addButtonMovedPosition?.y -= pageContainer.frame.height
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        updatePin()
+    }
+    
+    override func viewWillDisappear(_ animated: Bool) {
+        super.viewWillDisappear(animated)
+    }
+    
+    private func updatePin() {
         model.getAllCats { result in
             if let result = result as? [CatModel] {
                 self.catData = result
@@ -70,20 +91,8 @@ class CatMainViewController: UIViewController {
         if let cat = catData.first {
             goLocation(cat, delta: spanValue)
         }
-        
-        pageContainer.alpha = 0
-        mainMapView.delegate = self
-        
-        view.addSubview(addButton)
-        addButtonOriginalPosition = addButton.frame.origin
-        addButtonMovedPosition = addButtonOriginalPosition
-        addButtonMovedPosition?.y -= pageContainer.frame.height
-        
     }
     
-    override func viewWillDisappear(_ animated: Bool) {
-        super.viewWillDisappear(animated)
-    }
     
     @discardableResult
     private func goLocation(_ cat: CatModel, delta span: Double) -> CLLocationCoordinate2D {

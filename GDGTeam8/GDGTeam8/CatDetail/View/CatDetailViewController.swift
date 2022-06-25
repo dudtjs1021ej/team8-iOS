@@ -31,7 +31,7 @@ class CatDetailViewController: UIViewController {
     guard let id = id else { return }
     
     if
-      let url = URL(string: "http://3.34.197.35:3000/cats/"),
+      let url = URL(string: "http://13.125.252.148:3000/cats/"),
       var request = try? URLRequest(url: url, method: .get) {
       
       request.url?.appendPathComponent("\(id)")
@@ -43,7 +43,7 @@ class CatDetailViewController: UIViewController {
     }
     
     if
-      let url = URL(string: "http://3.34.197.35:3000/feeds/cat/"),
+      let url = URL(string: "http://13.125.252.148:3000/feeds/cat/"),
       var request = try? URLRequest(url: url, method: .get) {
       
       request.url?.appendPathComponent("\(id)")
@@ -137,7 +137,52 @@ extension CatDetailViewController: UICollectionViewDelegate, UICollectionViewDat
   }
   
   func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-    if let cell = collectionView.cellForItem(at: indexPath) as? CatFeedPlusCell {
+    if let _ = collectionView.cellForItem(at: indexPath) as? CatFeedPlusCell {
+      
+      let alert = UIAlertController(title: "피드 생성", message: nil, preferredStyle: .alert)
+      let okAction = UIAlertAction(title: "Ok", style: .default) { _ in
+        guard
+          let titleText = alert.textFields?.first?.text,
+          let contentsText = alert.textFields?.last?.text,
+          let catId = self.catModel?.id
+        else {
+          return
+        }
+        
+        let param = CatFeedModel(feed: InnerCatFeedModel(id: 0, cat_id: catId, title: titleText, content: contentsText, createdAt: "", updatedAt: ""))
+        
+        guard let url = URL(string: "http://13.125.252.148:3000/feeds"), var request = try? URLRequest(url: url, method: .post) else {
+          return
+        }
+        
+        request.httpBody = try? JSONEncoder().encode(param)
+        
+        AF.request(request).responseData { response in
+          switch response.result {
+          case .success(_):
+            self.feedsModel?.feeds.append(InnerCatFeedsModel(id: param.feed.id, cat_id: param.feed.cat_id, title: param.feed.title))
+            self.feedCollectionView.reloadData()
+          case .failure(_):
+            return
+          }
+        }
+      }
+      
+      let cancelAction = UIAlertAction(title: "Cancel", style: .default) { _ in
+        alert.dismiss(animated: true)
+      }
+      
+      alert.addAction(okAction)
+      alert.addAction(cancelAction)
+      
+      alert.addTextField { textField in
+        textField.placeholder = "제목"
+      }
+      
+      alert.addTextField { textField in
+        textField.placeholder = "내용"
+      }
+      self.present(alert, animated: true)
       
     } else {
       let vc = FeedDetailViewController()
