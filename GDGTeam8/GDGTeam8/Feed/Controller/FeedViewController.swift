@@ -10,7 +10,7 @@ import Alamofire
 
 class FeedViewController: UIViewController {
   @IBOutlet weak var feedCollectionView: UICollectionView!
-  var feeds: [Feed] = []
+  var feeds: [Cat] = []
   
     override func viewDidLoad() {
       super.viewDidLoad()
@@ -39,6 +39,8 @@ extension FeedViewController: UICollectionViewDelegate, UICollectionViewDataSour
   func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
     guard let cell = feedCollectionView.dequeueReusableCell(withReuseIdentifier: "FeedCell", for: indexPath) as? FeedCell else { return UICollectionViewCell() }
     cell.titleLabel.text = feeds[indexPath.row].title
+    cell.contentLabel.text = feeds[indexPath.row].content
+    cell.profileImageView.load(urlString: feeds[indexPath.row].imageURL)
     return cell
   }
   
@@ -58,14 +60,14 @@ extension FeedViewController: UICollectionViewDelegate, UICollectionViewDataSour
 extension FeedViewController {
   // getFeed
   func getFeed() {
-    AF.request("http://3.34.197.35:3000/feeds", method: .get)
+    AF.request("http://3.34.197.35:3000/cats/path", method: .get)
       .validate()
       .responseDecodable(of: FeedResponse.self) { response in
         print(response)
         switch response.result {
         case .success(let result):
           print(result)
-          self.feeds = result.feeds
+          self.feeds = result.cats
           self.feedCollectionView.reloadData()
 
         case .failure(let error):

@@ -37,9 +37,6 @@ extension PlusViewController: UIImagePickerControllerDelegate,UINavigationContro
   
   func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
     if let image = info[UIImagePickerController.InfoKey.originalImage] as? UIImage {         catImageView.image = image
-        let metadata = info[UIImagePickerController.InfoKey.mediaMetadata] as! String
-        print(metadata)
-        
     }
     dismiss(animated: true, completion: nil)
   }
