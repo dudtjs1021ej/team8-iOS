@@ -7,12 +7,26 @@
 
 import UIKit
 
-class CatMainPageViewController: UIPageViewController, UIPageViewControllerDelegate, UIPageViewControllerDataSource {
-    var pages = [
+class CatMainPageViewController: UIPageViewController {
+    
+    private var pages = [
         CatMainPageViewController.vcInstance(name: String(describing: CatMainItemViewController.self))
         , CatMainPageViewController.vcInstance(name: String(describing: CatMainItemViewController.self))
         , CatMainPageViewController.vcInstance(name: String(describing: CatMainItemViewController.self))
     ]
+    
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        self.dataSource = self
+//        self.delegate = self
+        
+        if let firstPage = pages.first as? UIViewController {
+            setViewControllers([firstPage], direction: .forward, animated: false)
+        }
+    }
+}
+
+extension CatMainPageViewController: UIPageViewControllerDataSource {
     
     func pageViewController(_ pageViewController: UIPageViewController, viewControllerBefore viewController: UIViewController) -> UIViewController? {
         guard let viewControllerIndex = pages.firstIndex(of: viewController) else { return nil }
@@ -44,16 +58,6 @@ class CatMainPageViewController: UIPageViewController, UIPageViewControllerDeleg
         }
         
         return pages[nextIndex]
-    }
-    
-    override func viewDidLoad() {
-        super.viewDidLoad()
-        self.dataSource = self
-        self.delegate = self
-        
-        if let firstPage = pages.first as? UIViewController {
-            setViewControllers([firstPage], direction: .forward, animated: false)
-        }
     }
     
     func presentationCount(for pageViewController: UIPageViewController) -> Int {
