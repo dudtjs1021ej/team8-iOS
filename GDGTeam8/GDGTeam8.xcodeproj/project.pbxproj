@@ -46,6 +46,7 @@
 		FA1D0CB72867785000DE5516 /* UIColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA1D0CB62867785000DE5516 /* UIColor.swift */; };
 		FA1D0CBC28677D2800DE5516 /* FeedResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA1D0CBB28677D2800DE5516 /* FeedResponse.swift */; };
 		FA1D0CBE2867854800DE5516 /* UIImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA1D0CBD2867854800DE5516 /* UIImageView.swift */; };
+		FA1D0CC02867A9F600DE5516 /* UITextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA1D0CBF2867A9F600DE5516 /* UITextField.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -88,6 +89,7 @@
 		FA1D0CB62867785000DE5516 /* UIColor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIColor.swift; sourceTree = "<group>"; };
 		FA1D0CBB28677D2800DE5516 /* FeedResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedResponse.swift; sourceTree = "<group>"; };
 		FA1D0CBD2867854800DE5516 /* UIImageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIImageView.swift; sourceTree = "<group>"; };
+		FA1D0CBF2867A9F600DE5516 /* UITextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UITextField.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -263,6 +265,7 @@
 			children = (
 				FA1D0CB62867785000DE5516 /* UIColor.swift */,
 				FA1D0CBD2867854800DE5516 /* UIImageView.swift */,
+				FA1D0CBF2867A9F600DE5516 /* UITextField.swift */,
 			);
 			path = Extension;
 			sourceTree = "<group>";
@@ -385,6 +388,7 @@
 				FA1D0CB72867785000DE5516 /* UIColor.swift in Sources */,
 				FA1D0CAF286771EF00DE5516 /* FeedCell.swift in Sources */,
 				FA1D0C622866D9E200DE5516 /* ViewController.swift in Sources */,
+				FA1D0CC02867A9F600DE5516 /* UITextField.swift in Sources */,
 				FA1D0C8B2866F8EF00DE5516 /* FeedDetailViewController.swift in Sources */,
 				FA1D0C802866F46400DE5516 /* CatFeedCell.swift in Sources */,
 				1B2E52C12867556500A636E6 /* CatModel.swift in Sources */,
