@@ -9,7 +9,7 @@ import UIKit
 
 class TabBarViewController: UITabBarController, UITabBarControllerDelegate {
   
-  var currentIndex: Int = 0
+  let transition = CircularTransition()
   
   override func viewDidLoad() {
     super.viewDidLoad()
@@ -50,7 +50,8 @@ class TabBarViewController: UITabBarController, UITabBarControllerDelegate {
       
       let plusStoryboard = UIStoryboard(name: "PlusViewController", bundle: nil)
       let plusVC = plusStoryboard.instantiateViewController(withIdentifier: "PlusViewController")
-      plusVC.modalPresentationStyle = .fullScreen
+      plusVC.modalPresentationStyle = .custom
+      plusVC.transitioningDelegate = self
       present(plusVC, animated: true, completion: nil)
       
       return false
@@ -61,4 +62,23 @@ class TabBarViewController: UITabBarController, UITabBarControllerDelegate {
     }
   }
   
+}
+
+
+extension TabBarViewController: UIViewControllerTransitioningDelegate {
+  
+  func animationController(forPresented presented: UIViewController, presenting: UIViewController, source: UIViewController) -> UIViewControllerAnimatedTransitioning? {
+    transition.transitionMode = .present
+    transition.startingPoint = CGPoint(x: UIScreen.main.bounds.size.width/2, y: UIScreen.main.bounds.size.height - 60)
+    transition.circleColor = .white
+    return transition
+  }
+      
+  func animationController(forDismissed dismissed: UIViewController) -> UIViewControllerAnimatedTransitioning? {
+    
+    transition.transitionMode = .dismiss
+    transition.startingPoint = CGPoint(x: UIScreen.main.bounds.size.width/2, y: UIScreen.main.bounds.size.height - 60)
+    transition.circleColor = .white
+    return transition
+  }
 }

@@ -27,6 +27,7 @@
 		FA1D0C9D2867029900DE5516 /* PlusViewController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FA1D0C9C2867029900DE5516 /* PlusViewController.storyboard */; };
 		FA1D0C9F286703AE00DE5516 /* FeedViewController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FA1D0C9E286703AE00DE5516 /* FeedViewController.storyboard */; };
 		FA1D0CA12867063300DE5516 /* TabBarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA1D0CA02867063300DE5516 /* TabBarViewController.swift */; };
+		FA1D0CA3286737D400DE5516 /* CircleTransition.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA1D0CA2286737D400DE5516 /* CircleTransition.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -52,6 +53,7 @@
 		FA1D0C9C2867029900DE5516 /* PlusViewController.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = PlusViewController.storyboard; sourceTree = "<group>"; };
 		FA1D0C9E286703AE00DE5516 /* FeedViewController.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = FeedViewController.storyboard; sourceTree = "<group>"; };
 		FA1D0CA02867063300DE5516 /* TabBarViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TabBarViewController.swift; sourceTree = "<group>"; };
+		FA1D0CA2286737D400DE5516 /* CircleTransition.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CircleTransition.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -107,6 +109,7 @@
 				FA1D0C662866D9E300DE5516 /* Assets.xcassets */,
 				FA1D0C682866D9E300DE5516 /* LaunchScreen.storyboard */,
 				FA1D0C6B2866D9E300DE5516 /* Info.plist */,
+				FA1D0CA2286737D400DE5516 /* CircleTransition.swift */,
 			);
 			path = GDGTeam8;
 			sourceTree = "<group>";
@@ -292,6 +295,7 @@
 				1B2E52AE2866F20000A636E6 /* CatMainViewController.swift in Sources */,
 				FA1D0C952866FED200DE5516 /* FeedViewController.swift in Sources */,
 				FA1D0C602866D9E200DE5516 /* SceneDelegate.swift in Sources */,
+				FA1D0CA3286737D400DE5516 /* CircleTransition.swift in Sources */,
 				FA1D0C9A2867006800DE5516 /* PlusViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
