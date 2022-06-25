@@ -55,6 +55,8 @@ class CatMainItemViewController: UIViewController {
         self.model = cat
     }
     @IBAction func viewTapGestureAction(_ sender: UITapGestureRecognizer) {
-        print("haha")
+        let vc = CatDetailViewController()
+        vc.id = model?.id
+        self.navigationController?.pushViewController(vc, animated: true)
     }
 }

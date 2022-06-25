@@ -10,9 +10,14 @@ import UIKit
 class CatInfoCell: UICollectionViewCell {
 
   @IBOutlet weak var starButton: UIButton!
+  
+  @IBOutlet weak var titleLabel: UILabel!
+  
+  @IBOutlet weak var contentLabel: UILabel!
+  
   override func awakeFromNib() {
         super.awakeFromNib()
     starButton.layer.cornerRadius = 4
-    }
+  }
 
 }
