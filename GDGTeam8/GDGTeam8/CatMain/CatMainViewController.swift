@@ -20,6 +20,7 @@ class CatMainViewController: UIViewController {
     @IBOutlet weak var switchFeedButton: UIButton!
     
     @IBOutlet weak var pageContainer: UIView!
+    private var pageController: CatMainPageViewController?
     
     private let model = CatRequestModel()
     
@@ -44,6 +45,7 @@ class CatMainViewController: UIViewController {
         model.getAllCats { result in
             if let result = result as? [CatModel] {
                 self.catData = result
+                self.pageController?.reloadPage(self.catData)
             }
         }
         
@@ -95,6 +97,12 @@ class CatMainViewController: UIViewController {
         
         UIView.animate(withDuration: 0.7) {
             self.pageContainer.alpha = 0
+        }
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if let pageController = segue.destination as? CatMainPageViewController {
+            self.pageController = pageController
         }
     }
 }

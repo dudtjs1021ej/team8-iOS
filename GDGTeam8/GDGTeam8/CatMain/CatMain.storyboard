@@ -24,9 +24,9 @@
                                 </connections>
                             </mapView>
                             <containerView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="TwP-S9-cqg">
-                                <rect key="frame" x="16" y="742" width="382" height="120"/>
+                                <rect key="frame" x="0.0" y="725" width="414" height="137"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="120" id="bAi-s1-Emn"/>
+                                    <constraint firstAttribute="height" constant="137" id="bAi-s1-Emn"/>
                                 </constraints>
                                 <connections>
                                     <segue destination="iDX-tz-r8b" kind="embed" id="ZJh-ez-Wru"/>
@@ -37,11 +37,11 @@
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
                             <constraint firstItem="vDu-zF-Fre" firstAttribute="bottom" secondItem="Ijv-c7-m6g" secondAttribute="bottom" id="4Py-gB-flx"/>
-                            <constraint firstItem="TwP-S9-cqg" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" constant="16" id="AYy-ek-cA3"/>
+                            <constraint firstItem="TwP-S9-cqg" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" id="AYy-ek-cA3"/>
                             <constraint firstItem="Ijv-c7-m6g" firstAttribute="top" secondItem="vDu-zF-Fre" secondAttribute="top" id="NU2-ID-oIg"/>
                             <constraint firstItem="TwP-S9-cqg" firstAttribute="bottom" secondItem="Ijv-c7-m6g" secondAttribute="bottom" id="eg8-bD-sAj"/>
                             <constraint firstItem="Ijv-c7-m6g" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" id="fg2-kI-vNa"/>
-                            <constraint firstItem="vDu-zF-Fre" firstAttribute="trailing" secondItem="TwP-S9-cqg" secondAttribute="trailing" constant="16" id="t0E-l8-Fy1"/>
+                            <constraint firstItem="vDu-zF-Fre" firstAttribute="trailing" secondItem="TwP-S9-cqg" secondAttribute="trailing" id="t0E-l8-Fy1"/>
                             <constraint firstItem="vDu-zF-Fre" firstAttribute="trailing" secondItem="Ijv-c7-m6g" secondAttribute="trailing" id="uh1-3j-WKK"/>
                         </constraints>
                     </view>
@@ -63,7 +63,9 @@
         <!--Cat Main Page View Controller-->
         <scene sceneID="8RM-QB-jFP">
             <objects>
-                <pageViewController storyboardIdentifier="CatMainPageViewController" autoresizesArchivedViewToFullSize="NO" useStoryboardIdentifierAsRestorationIdentifier="YES" transitionStyle="scroll" navigationOrientation="horizontal" spineLocation="none" id="iDX-tz-r8b" customClass="CatMainPageViewController" customModule="GDGTeam8" customModuleProvider="target" sceneMemberID="viewController"/>
+                <pageViewController storyboardIdentifier="CatMainPageViewController" autoresizesArchivedViewToFullSize="NO" useStoryboardIdentifierAsRestorationIdentifier="YES" transitionStyle="scroll" navigationOrientation="horizontal" spineLocation="none" id="iDX-tz-r8b" customClass="CatMainPageViewController" customModule="GDGTeam8" customModuleProvider="target" sceneMemberID="viewController">
+                    <extendedEdge key="edgesForExtendedLayout" top="YES"/>
+                </pageViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="7q1-BQ-7Lj" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="906" y="264"/>
@@ -73,16 +75,58 @@
             <objects>
                 <viewController storyboardIdentifier="CatMainItemViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="pZh-ar-dAz" customClass="CatMainItemViewController" customModule="GDGTeam8" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="608-aM-ulP">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="120"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="137"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="4AE-UI-eo3">
+                                <rect key="frame" x="29" y="29" width="79" height="79"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="4AE-UI-eo3" secondAttribute="height" multiplier="1:1" id="g47-eS-DgZ"/>
+                                </constraints>
+                            </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Cat Name" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ApT-tt-EJg">
+                                <rect key="frame" x="139" y="34" width="246" height="17"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="17" id="z04-qO-wOi"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="92I-1Y-Szy">
+                                <rect key="frame" x="139" y="59" width="246" height="49"/>
+                                <string key="text">Description Lorem itsum De
+scription Lorem iets..</string>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
                         <viewLayoutGuide key="safeArea" id="Ni6-Q1-5eW"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="92I-1Y-Szy" firstAttribute="top" secondItem="ApT-tt-EJg" secondAttribute="bottom" constant="8" id="429-PV-q8G"/>
+                            <constraint firstItem="Ni6-Q1-5eW" firstAttribute="bottom" secondItem="4AE-UI-eo3" secondAttribute="bottom" constant="29" id="6hu-Lh-N8F"/>
+                            <constraint firstItem="4AE-UI-eo3" firstAttribute="top" secondItem="608-aM-ulP" secondAttribute="top" constant="29" id="AUg-Xe-lae"/>
+                            <constraint firstItem="4AE-UI-eo3" firstAttribute="leading" secondItem="Ni6-Q1-5eW" secondAttribute="leading" constant="29" id="N9t-lB-fxh"/>
+                            <constraint firstItem="Ni6-Q1-5eW" firstAttribute="trailing" secondItem="92I-1Y-Szy" secondAttribute="trailing" constant="29" id="WcY-Rf-tWP"/>
+                            <constraint firstItem="ApT-tt-EJg" firstAttribute="leading" secondItem="4AE-UI-eo3" secondAttribute="trailing" constant="31" id="XXl-uZ-x9Y"/>
+                            <constraint firstItem="92I-1Y-Szy" firstAttribute="bottom" secondItem="4AE-UI-eo3" secondAttribute="bottom" id="aK2-Ib-zJY"/>
+                            <constraint firstItem="Ni6-Q1-5eW" firstAttribute="trailing" secondItem="ApT-tt-EJg" secondAttribute="trailing" constant="29" id="tPa-1s-QWP"/>
+                            <constraint firstItem="92I-1Y-Szy" firstAttribute="leading" secondItem="ApT-tt-EJg" secondAttribute="leading" id="ykf-IB-YCi"/>
+                            <constraint firstItem="ApT-tt-EJg" firstAttribute="top" secondItem="4AE-UI-eo3" secondAttribute="top" constant="5" id="zqm-RY-dJu"/>
+                        </constraints>
                     </view>
-                    <size key="freeformSize" width="414" height="120"/>
+                    <size key="freeformSize" width="414" height="137"/>
+                    <connections>
+                        <outlet property="catDescriptionLabel" destination="92I-1Y-Szy" id="AH9-M5-JTK"/>
+                        <outlet property="catNameLabel" destination="ApT-tt-EJg" id="eJr-vb-yqB"/>
+                        <outlet property="mainImageView" destination="4AE-UI-eo3" id="2No-bi-6Bv"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Shq-Jz-Roc" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="929" y="395"/>
+            <point key="canvasLocation" x="928.98550724637687" y="394.41964285714283"/>
         </scene>
     </scenes>
     <resources>
