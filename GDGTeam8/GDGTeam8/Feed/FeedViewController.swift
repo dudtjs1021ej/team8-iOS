@@ -13,7 +13,7 @@ class FeedViewController: UIViewController {
     override func viewDidLoad() {
       super.viewDidLoad()
 
-      feedCollectionView.register(UINib(nibName: "CatFeedCell", bundle: .main), forCellWithReuseIdentifier: "CatFeedCell")
+      feedCollectionView.register(UINib(nibName: "FeedCell", bundle: .main), forCellWithReuseIdentifier: "FeedCell")
       feedCollectionView.delegate = self
       feedCollectionView.dataSource = self
 
@@ -26,7 +26,7 @@ extension FeedViewController: UICollectionViewDelegate, UICollectionViewDataSour
   }
   
   func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-    guard let cell = feedCollectionView.dequeueReusableCell(withReuseIdentifier: "CatFeedCell", for: indexPath) as? CatFeedCell else { return UICollectionViewCell() }
+    guard let cell = feedCollectionView.dequeueReusableCell(withReuseIdentifier: "FeedCell", for: indexPath) as? FeedCell else { return UICollectionViewCell() }
     return cell
   }
   

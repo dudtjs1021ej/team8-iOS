@@ -39,6 +39,8 @@
 		FA1D0CA72867527F00DE5516 /* CatInfoCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = FA1D0CA52867527F00DE5516 /* CatInfoCell.xib */; };
 		FA1D0CAA28676D5900DE5516 /* CatFeedPlusCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA1D0CA828676D5900DE5516 /* CatFeedPlusCell.swift */; };
 		FA1D0CAB28676D5900DE5516 /* CatFeedPlusCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = FA1D0CA928676D5900DE5516 /* CatFeedPlusCell.xib */; };
+		FA1D0CAF286771EF00DE5516 /* FeedCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA1D0CAD286771EF00DE5516 /* FeedCell.swift */; };
+		FA1D0CB0286771EF00DE5516 /* FeedCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = FA1D0CAE286771EF00DE5516 /* FeedCell.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -74,6 +76,8 @@
 		FA1D0CA52867527F00DE5516 /* CatInfoCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CatInfoCell.xib; sourceTree = "<group>"; };
 		FA1D0CA828676D5900DE5516 /* CatFeedPlusCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CatFeedPlusCell.swift; sourceTree = "<group>"; };
 		FA1D0CA928676D5900DE5516 /* CatFeedPlusCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CatFeedPlusCell.xib; sourceTree = "<group>"; };
+		FA1D0CAD286771EF00DE5516 /* FeedCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedCell.swift; sourceTree = "<group>"; };
+		FA1D0CAE286771EF00DE5516 /* FeedCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = FeedCell.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -224,6 +228,7 @@
 		FA1D0C922866FE7700DE5516 /* Feed */ = {
 			isa = PBXGroup;
 			children = (
+				FA1D0CAC286771D900DE5516 /* View */,
 				FA1D0C932866FED200DE5516 /* FeedViewController.swift */,
 				FA1D0C9E286703AE00DE5516 /* FeedViewController.storyboard */,
 			);
@@ -237,6 +242,15 @@
 				FA1D0C9C2867029900DE5516 /* PlusViewController.storyboard */,
 			);
 			path = Plus;
+			sourceTree = "<group>";
+		};
+		FA1D0CAC286771D900DE5516 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				FA1D0CAD286771EF00DE5516 /* FeedCell.swift */,
+				FA1D0CAE286771EF00DE5516 /* FeedCell.xib */,
+			);
+			path = View;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -314,6 +328,7 @@
 				FA1D0C6A2866D9E300DE5516 /* LaunchScreen.storyboard in Resources */,
 				FA1D0C672866D9E300DE5516 /* Assets.xcassets in Resources */,
 				1B2E52B02866F22B00A636E6 /* CatMain.storyboard in Resources */,
+				FA1D0CB0286771EF00DE5516 /* FeedCell.xib in Resources */,
 				FA1D0C9D2867029900DE5516 /* PlusViewController.storyboard in Resources */,
 				FA1D0C652866D9E200DE5516 /* Main.storyboard in Resources */,
 			);
@@ -327,6 +342,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				FA1D0CAA28676D5900DE5516 /* CatFeedPlusCell.swift in Sources */,
+				FA1D0CAF286771EF00DE5516 /* FeedCell.swift in Sources */,
 				FA1D0C622866D9E200DE5516 /* ViewController.swift in Sources */,
 				FA1D0C8B2866F8EF00DE5516 /* FeedDetailViewController.swift in Sources */,
 				FA1D0C802866F46400DE5516 /* CatFeedCell.swift in Sources */,
