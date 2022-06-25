@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="20037" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="19455" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="20020"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="19454"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
@@ -21,13 +21,16 @@
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="JpH-n3-eIj">
-                    <rect key="frame" x="30" y="74" width="52" height="21"/>
+                    <rect key="frame" x="15" y="74" width="51" height="21"/>
                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                     <color key="tintColor" red="0.38823529411764707" green="0.38823529411764707" blue="0.38823529411764707" alpha="0.84705882352941175" colorSpace="calibratedRGB"/>
                     <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
                     <state key="normal" title="  이전" image="chevron.left" catalog="system">
                         <color key="titleColor" red="0.38823529411764707" green="0.38823529411764707" blue="0.38823529411764707" alpha="0.84705882352941175" colorSpace="calibratedRGB"/>
                     </state>
+                    <connections>
+                        <action selector="dismissButtonTouchUpInside:" destination="-1" eventType="touchUpInside" id="hJq-Nf-oHm"/>
+                    </connections>
                 </button>
                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3sz-EI-dMV">
                     <rect key="frame" x="16" y="187" width="235" height="26"/>
@@ -58,18 +61,18 @@
                     <nil key="highlightedColor"/>
                 </label>
                 <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="고양이 별명" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="kYH-E6-n0J">
-                    <rect key="frame" x="39" y="285" width="336" height="18.5"/>
+                    <rect key="frame" x="25" y="285" width="350" height="18.5"/>
                     <fontDescription key="fontDescription" type="system" pointSize="14"/>
                     <textInputTraits key="textInputTraits"/>
                 </textField>
                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="별명은 최대 12글자까지 입력가능합니다." textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="DvJ-1j-Y8C">
-                    <rect key="frame" x="24" y="314.5" width="193" height="15"/>
+                    <rect key="frame" x="24" y="328.5" width="193" height="15"/>
                     <fontDescription key="fontDescription" type="system" pointSize="12"/>
                     <nil key="textColor"/>
                     <nil key="highlightedColor"/>
                 </label>
                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="W94-eu-z7j">
-                    <rect key="frame" x="16" y="426.5" width="382" height="48"/>
+                    <rect key="frame" x="16" y="766" width="382" height="48"/>
                     <color key="backgroundColor" red="0.97647058819999999" green="0.43137254899999999" blue="0.14901960780000001" alpha="0.84705882349999995" colorSpace="calibratedRGB"/>
                     <constraints>
                         <constraint firstAttribute="height" constant="48" id="Dqq-ZF-pPY"/>
@@ -90,20 +93,20 @@
             <viewLayoutGuide key="safeArea" id="fnl-2z-Ty3"/>
             <color key="backgroundColor" systemColor="systemBackgroundColor"/>
             <constraints>
-                <constraint firstItem="W94-eu-z7j" firstAttribute="top" secondItem="DvJ-1j-Y8C" secondAttribute="bottom" constant="97" id="1Qa-Oc-noA"/>
                 <constraint firstItem="3sz-EI-dMV" firstAttribute="leading" secondItem="EEi-UY-BVn" secondAttribute="leading" id="Cjj-hO-Yed"/>
                 <constraint firstItem="JpH-n3-eIj" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" constant="30" id="DrF-Gz-iII"/>
-                <constraint firstItem="kYH-E6-n0J" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="39" id="OeU-qL-5By"/>
+                <constraint firstItem="kYH-E6-n0J" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="25" id="OeU-qL-5By"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="bottom" secondItem="W94-eu-z7j" secondAttribute="bottom" constant="48" id="Pzs-NY-INh"/>
                 <constraint firstItem="EEi-UY-BVn" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="16" id="V7e-f5-8aD"/>
                 <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="kYH-E6-n0J" secondAttribute="trailing" constant="39" id="Z28-Aa-PqZ"/>
                 <constraint firstItem="W94-eu-z7j" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="16" id="eBX-d3-O0S"/>
                 <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="W94-eu-z7j" secondAttribute="trailing" constant="16" id="fDb-tj-aF9"/>
                 <constraint firstItem="3sz-EI-dMV" firstAttribute="top" secondItem="EEi-UY-BVn" secondAttribute="bottom" constant="8" id="hS5-Xu-FgP"/>
-                <constraint firstItem="JpH-n3-eIj" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="30" id="jzs-Io-fQd"/>
+                <constraint firstItem="JpH-n3-eIj" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="15" id="jzs-Io-fQd"/>
                 <constraint firstItem="kYH-E6-n0J" firstAttribute="top" secondItem="3sz-EI-dMV" secondAttribute="bottom" constant="72" id="oJJ-2k-GNO"/>
                 <constraint firstItem="EEi-UY-BVn" firstAttribute="top" secondItem="JpH-n3-eIj" secondAttribute="bottom" constant="22" id="ois-kz-9VG"/>
                 <constraint firstItem="DvJ-1j-Y8C" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="24" id="pU3-Zv-5He"/>
-                <constraint firstItem="DvJ-1j-Y8C" firstAttribute="top" secondItem="kYH-E6-n0J" secondAttribute="bottom" constant="11" id="xtE-Sz-DNN"/>
+                <constraint firstItem="DvJ-1j-Y8C" firstAttribute="top" secondItem="kYH-E6-n0J" secondAttribute="bottom" constant="25" id="xtE-Sz-DNN"/>
             </constraints>
             <point key="canvasLocation" x="131.8840579710145" y="63.616071428571423"/>
         </view>
