@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import Photos
 
 class PlusViewController: UIViewController {
 
@@ -37,11 +38,19 @@ extension PlusViewController: UIImagePickerControllerDelegate,UINavigationContro
   
   func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
     if let image = info[UIImagePickerController.InfoKey.originalImage] as? UIImage {         catImageView.image = image
-        let metadata = info[UIImagePickerController.InfoKey.mediaMetadata] as! String
-        print(metadata)
-        
     }
+    
+    let fetchOptions = PHFetchOptions()
+    fetchOptions.fetchLimit = 1
+    let sortDescriptor = NSSortDescriptor(key: "creationDate", ascending: false)
+    fetchOptions.sortDescriptors = [sortDescriptor]
+    
+    let photo = PHAsset.fetchAssets(with: .image, options: fetchOptions)
+    
+    photo.enumerateObjects { asset, _, _ in
+      print(asset.location?.coordinate.longitude, asset.location?.coordinate.latitude)
+    }
+    
     dismiss(animated: true, completion: nil)
   }
-  
 }
