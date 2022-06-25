@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="19455" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="Y6W-OH-hqX">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="20037" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="Y6W-OH-hqX">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="19454"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="20020"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
@@ -54,15 +54,27 @@
                                     <constraint firstAttribute="height" constant="120" id="uA9-eE-kpg"/>
                                 </constraints>
                             </stackView>
+                            <containerView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="TwP-S9-cqg">
+                                <rect key="frame" x="16" y="606" width="382" height="120"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="120" id="bAi-s1-Emn"/>
+                                </constraints>
+                                <connections>
+                                    <segue destination="iDX-tz-r8b" kind="embed" id="ZJh-ez-Wru"/>
+                                </connections>
+                            </containerView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="vDu-zF-Fre"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
+                            <constraint firstItem="TwP-S9-cqg" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" constant="16" id="AYy-ek-cA3"/>
                             <constraint firstItem="64Q-4Z-wVF" firstAttribute="top" secondItem="Ijv-c7-m6g" secondAttribute="bottom" constant="16" id="CgK-ME-MQX"/>
                             <constraint firstItem="Ijv-c7-m6g" firstAttribute="top" secondItem="vDu-zF-Fre" secondAttribute="top" id="NU2-ID-oIg"/>
                             <constraint firstItem="vDu-zF-Fre" firstAttribute="bottom" secondItem="64Q-4Z-wVF" secondAttribute="bottom" id="ZYQ-h2-jgc"/>
+                            <constraint firstItem="TwP-S9-cqg" firstAttribute="bottom" secondItem="Ijv-c7-m6g" secondAttribute="bottom" id="eg8-bD-sAj"/>
                             <constraint firstItem="Ijv-c7-m6g" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" id="fg2-kI-vNa"/>
                             <constraint firstItem="vDu-zF-Fre" firstAttribute="trailing" secondItem="64Q-4Z-wVF" secondAttribute="trailing" constant="16" id="l5s-y2-BNS"/>
+                            <constraint firstItem="vDu-zF-Fre" firstAttribute="trailing" secondItem="TwP-S9-cqg" secondAttribute="trailing" constant="16" id="t0E-l8-Fy1"/>
                             <constraint firstItem="vDu-zF-Fre" firstAttribute="trailing" secondItem="Ijv-c7-m6g" secondAttribute="trailing" id="uh1-3j-WKK"/>
                             <constraint firstItem="64Q-4Z-wVF" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" constant="16" id="vvS-We-Vaw"/>
                         </constraints>
@@ -70,6 +82,7 @@
                     <connections>
                         <outlet property="createFeedButton" destination="SKA-m0-cIA" id="JTO-ff-mUe"/>
                         <outlet property="mainMapView" destination="Ijv-c7-m6g" id="Fno-bP-W9Z"/>
+                        <outlet property="pageContainer" destination="TwP-S9-cqg" id="IiV-6M-tvJ"/>
                         <outlet property="switchFeedButton" destination="NaN-hM-HNy" id="XXC-J0-AMz"/>
                         <outlet property="switchMapButton" destination="Sqw-bT-YZ6" id="mdm-HG-Pxb"/>
                     </connections>
@@ -77,6 +90,30 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Ief-a0-LHa" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="121.73913043478262" y="118.52678571428571"/>
+        </scene>
+        <!--Cat Main Page View Controller-->
+        <scene sceneID="8RM-QB-jFP">
+            <objects>
+                <pageViewController storyboardIdentifier="CatMainPageViewController" autoresizesArchivedViewToFullSize="NO" useStoryboardIdentifierAsRestorationIdentifier="YES" transitionStyle="scroll" navigationOrientation="horizontal" spineLocation="none" id="iDX-tz-r8b" customClass="CatMainPageViewController" customModule="GDGTeam8" customModuleProvider="target" sceneMemberID="viewController"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="7q1-BQ-7Lj" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="906" y="264"/>
+        </scene>
+        <!--Cat Main Item View Controller-->
+        <scene sceneID="atf-Ie-8Hu">
+            <objects>
+                <viewController storyboardIdentifier="CatMainItemViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="pZh-ar-dAz" customClass="CatMainItemViewController" customModule="GDGTeam8" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="608-aM-ulP">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="120"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <viewLayoutGuide key="safeArea" id="Ni6-Q1-5eW"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                    </view>
+                    <size key="freeformSize" width="414" height="120"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Shq-Jz-Roc" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="929" y="395"/>
         </scene>
     </scenes>
     <resources>
