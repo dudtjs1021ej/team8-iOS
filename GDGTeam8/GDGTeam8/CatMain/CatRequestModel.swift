@@ -10,7 +10,7 @@ import Alamofire
 
 class CatRequestModel {
     func getAllCats(_ completionHandler: @escaping (Any) -> Void) {
-        guard let url = URL(string: "http://3.34.197.35:3000/cats"), var request = try? URLRequest(url: url, method: .get) else {
+        guard let url = URL(string: "http://13.125.252.148:3000/cats"), var request = try? URLRequest(url: url, method: .get) else {
             return
         }
         

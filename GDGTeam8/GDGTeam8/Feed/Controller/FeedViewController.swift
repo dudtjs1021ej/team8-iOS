@@ -60,7 +60,7 @@ extension FeedViewController: UICollectionViewDelegate, UICollectionViewDataSour
 extension FeedViewController {
   // getFeed
   func getFeed() {
-    AF.request("http://3.34.197.35:3000/cats/path", method: .get)
+    AF.request("http://13.125.252.148:3000/cats/path", method: .get)
       .validate()
       .responseDecodable(of: FeedResponse.self) { response in
         print(response)

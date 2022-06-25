@@ -8,7 +8,7 @@
 import Foundation
 
 struct CatFeedsModel: Codable {
-    let feeds: [InnerCatFeedsModel]
+    var feeds: [InnerCatFeedsModel]
 }
 
 struct InnerCatFeedsModel: Codable {
