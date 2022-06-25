@@ -25,9 +25,9 @@ class TabBarViewController: UITabBarController, UITabBarControllerDelegate {
     let plusVC = plusStoryboard.instantiateViewController(withIdentifier: "PlusViewController")
     
     
-    let FeedStoryboard = UIStoryboard(name: "FeedViewController", bundle: nil)
-    let feedVC = FeedStoryboard.instantiateViewController(withIdentifier: "FeedViewController")
-    
+//    let FeedStoryboard = UIStoryboard(name: "FeedViewController", bundle: nil)
+//    let feedVC = FeedStoryboard.instantiateViewController(withIdentifier: "FeedViewController")
+    let feedVC = CatDetailViewController()
     let firstNC = UINavigationController.init(rootViewController: catMainVC)
     let secondNC = UINavigationController.init(rootViewController: plusVC)
     let thirdNC = UINavigationController.init(rootViewController: feedVC)

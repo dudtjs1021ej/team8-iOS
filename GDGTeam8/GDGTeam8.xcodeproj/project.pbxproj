@@ -32,6 +32,10 @@
 		FA1D0C9F286703AE00DE5516 /* FeedViewController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FA1D0C9E286703AE00DE5516 /* FeedViewController.storyboard */; };
 		FA1D0CA12867063300DE5516 /* TabBarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA1D0CA02867063300DE5516 /* TabBarViewController.swift */; };
 		FA1D0CA3286737D400DE5516 /* CircleTransition.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA1D0CA2286737D400DE5516 /* CircleTransition.swift */; };
+		FA1D0CA62867527F00DE5516 /* CatInfoCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA1D0CA42867527F00DE5516 /* CatInfoCell.swift */; };
+		FA1D0CA72867527F00DE5516 /* CatInfoCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = FA1D0CA52867527F00DE5516 /* CatInfoCell.xib */; };
+		FA1D0CAA28676D5900DE5516 /* CatFeedPlusCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA1D0CA828676D5900DE5516 /* CatFeedPlusCell.swift */; };
+		FA1D0CAB28676D5900DE5516 /* CatFeedPlusCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = FA1D0CA928676D5900DE5516 /* CatFeedPlusCell.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -60,6 +64,10 @@
 		FA1D0C9E286703AE00DE5516 /* FeedViewController.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = FeedViewController.storyboard; sourceTree = "<group>"; };
 		FA1D0CA02867063300DE5516 /* TabBarViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TabBarViewController.swift; sourceTree = "<group>"; };
 		FA1D0CA2286737D400DE5516 /* CircleTransition.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CircleTransition.swift; sourceTree = "<group>"; };
+		FA1D0CA42867527F00DE5516 /* CatInfoCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CatInfoCell.swift; sourceTree = "<group>"; };
+		FA1D0CA52867527F00DE5516 /* CatInfoCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CatInfoCell.xib; sourceTree = "<group>"; };
+		FA1D0CA828676D5900DE5516 /* CatFeedPlusCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CatFeedPlusCell.swift; sourceTree = "<group>"; };
+		FA1D0CA928676D5900DE5516 /* CatFeedPlusCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CatFeedPlusCell.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -163,6 +171,10 @@
 			children = (
 				FA1D0C7E2866F46400DE5516 /* CatFeedCell.swift */,
 				FA1D0C7F2866F46400DE5516 /* CatFeedCell.xib */,
+				FA1D0CA42867527F00DE5516 /* CatInfoCell.swift */,
+				FA1D0CA52867527F00DE5516 /* CatInfoCell.xib */,
+				FA1D0CA828676D5900DE5516 /* CatFeedPlusCell.swift */,
+				FA1D0CA928676D5900DE5516 /* CatFeedPlusCell.xib */,
 			);
 			path = Cell;
 			sourceTree = "<group>";
@@ -284,10 +296,12 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				FA1D0CA72867527F00DE5516 /* CatInfoCell.xib in Resources */,
 				FA1D0C872866F52100DE5516 /* CatDetailViewController.xib in Resources */,
 				FA1D0C8C2866F8EF00DE5516 /* FeedDetailViewController.xib in Resources */,
 				FA1D0C9F286703AE00DE5516 /* FeedViewController.storyboard in Resources */,
 				FA1D0C812866F46400DE5516 /* CatFeedCell.xib in Resources */,
+				FA1D0CAB28676D5900DE5516 /* CatFeedPlusCell.xib in Resources */,
 				FA1D0C6A2866D9E300DE5516 /* LaunchScreen.storyboard in Resources */,
 				FA1D0C672866D9E300DE5516 /* Assets.xcassets in Resources */,
 				1B2E52B02866F22B00A636E6 /* CatMain.storyboard in Resources */,
@@ -303,6 +317,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				FA1D0CAA28676D5900DE5516 /* CatFeedPlusCell.swift in Sources */,
 				FA1D0C622866D9E200DE5516 /* ViewController.swift in Sources */,
 				FA1D0C8B2866F8EF00DE5516 /* FeedDetailViewController.swift in Sources */,
 				FA1D0C802866F46400DE5516 /* CatFeedCell.swift in Sources */,
@@ -315,6 +330,7 @@
 				1B2E52AE2866F20000A636E6 /* CatMainViewController.swift in Sources */,
 				FA1D0C952866FED200DE5516 /* FeedViewController.swift in Sources */,
 				FA1D0C602866D9E200DE5516 /* SceneDelegate.swift in Sources */,
+				FA1D0CA62867527F00DE5516 /* CatInfoCell.swift in Sources */,
 				FA1D0CA3286737D400DE5516 /* CircleTransition.swift in Sources */,
 				FA1D0C9A2867006800DE5516 /* PlusViewController.swift in Sources */,
 			);
