@@ -24,12 +24,12 @@ class CatMainViewController: UIViewController {
     private lazy var addButton: UIButton = {
         let button = UIButton()
         button.frame = CGRect(
-            x: mainMapView.frame.width - (96 + 48),
-            y: mainMapView.frame.height - (96 + 96),
-            width: 96,
-            height: 96
+            x: mainMapView.frame.width - (79 + 48),
+            y: mainMapView.frame.height - (79 + 79),
+            width: 79,
+            height: 79
         )
-        button.backgroundColor = .red
+        button.setImage(UIImage(named: "addButtonImage"), for: .normal)
         
         return button
     }()
