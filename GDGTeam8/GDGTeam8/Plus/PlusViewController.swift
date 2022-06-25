@@ -41,7 +41,9 @@ class PlusViewController: UIViewController {
 extension PlusViewController: UIImagePickerControllerDelegate,UINavigationControllerDelegate {
   
   func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
-    if let image = info[UIImagePickerController.InfoKey.originalImage] as? UIImage {         catImageView.image = image
+    if let image = info[UIImagePickerController.InfoKey.originalImage] as? UIImage {
+      catImageView.image = image
+      cameraButton.isHidden = true
     }
     
     let fetchOptions = PHFetchOptions()
