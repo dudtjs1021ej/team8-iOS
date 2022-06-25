@@ -137,10 +137,13 @@ extension CatDetailViewController: UICollectionViewDelegate, UICollectionViewDat
   }
   
   func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-    let vc = FeedDetailViewController()
-    vc.hidesBottomBarWhenPushed = true
-    self.navigationController?.pushViewController(vc, animated: true)
-
+    if let cell = collectionView.cellForItem(at: indexPath) as? CatFeedPlusCell {
+      
+    } else {
+      let vc = FeedDetailViewController()
+      vc.hidesBottomBarWhenPushed = true
+      self.navigationController?.pushViewController(vc, animated: true)
+    }
   }
   
   

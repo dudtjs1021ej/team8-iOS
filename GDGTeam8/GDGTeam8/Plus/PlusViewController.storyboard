@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="19455" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="Y6W-OH-hqX">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="20037" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="Y6W-OH-hqX">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="19454"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="20020"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
@@ -16,41 +16,63 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="plus" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="JYh-lK-FcR">
-                                <rect key="frame" x="191" y="437.5" width="32" height="21"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="새로운 고양이를 발견하셨나요?" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="BLT-XG-scR">
+                                <rect key="frame" x="46" y="200" width="322" height="29"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="29" id="e8X-K1-9xH"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="24"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="사진을 찍어 등록해보세요!" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="vOH-zf-teA">
+                                <rect key="frame" x="110" y="237" width="194" height="18"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="15"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="NSw-PC-c4u">
-                                <rect key="frame" x="0.0" y="44" width="36" height="31"/>
+                                <rect key="frame" x="0.0" y="44" width="37" height="31"/>
                                 <state key="normal" title="Button"/>
                                 <buttonConfiguration key="configuration" style="plain" image="chevron.left" catalog="system"/>
                                 <connections>
                                     <action selector="backButtonTouchUpInside:" destination="Y6W-OH-hqX" eventType="touchUpInside" id="J7m-Go-Bk7"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="cpv-qJ-YsN">
-                                <rect key="frame" x="325" y="152" width="72" height="31"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="NJX-7z-Eoc">
+                                <rect key="frame" x="16" y="303" width="382" height="212"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="212" id="cJy-Fx-Da4"/>
+                                </constraints>
+                            </imageView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="cpv-qJ-YsN">
+                                <rect key="frame" x="16" y="303" width="382" height="212"/>
+                                <color key="tintColor" systemColor="systemOrangeColor"/>
                                 <state key="normal" title="Button"/>
-                                <buttonConfiguration key="configuration" style="plain" title="camera"/>
+                                <buttonConfiguration key="configuration" style="plain" image="plus.circle.fill" catalog="system"/>
                                 <connections>
                                     <action selector="cameraBttuonTouchUpInside:" destination="Y6W-OH-hqX" eventType="touchUpInside" id="ZfL-jO-Hkz"/>
                                 </connections>
                             </button>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="NJX-7z-Eoc">
-                                <rect key="frame" x="95" y="135" width="187" height="116"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                            </imageView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="vDu-zF-Fre"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
-                            <constraint firstItem="JYh-lK-FcR" firstAttribute="centerX" secondItem="5EZ-qb-Rvc" secondAttribute="centerX" id="Hc0-55-AGt"/>
-                            <constraint firstItem="JYh-lK-FcR" firstAttribute="centerY" secondItem="5EZ-qb-Rvc" secondAttribute="centerY" id="Kz5-84-Mup"/>
+                            <constraint firstItem="vDu-zF-Fre" firstAttribute="trailing" secondItem="vOH-zf-teA" secondAttribute="trailing" constant="110" id="2iR-OJ-Brw"/>
+                            <constraint firstItem="NJX-7z-Eoc" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" constant="16" id="3xI-Jb-7kW"/>
+                            <constraint firstItem="vDu-zF-Fre" firstAttribute="trailing" secondItem="BLT-XG-scR" secondAttribute="trailing" constant="46" id="963-f3-RnZ"/>
+                            <constraint firstItem="cpv-qJ-YsN" firstAttribute="top" secondItem="NJX-7z-Eoc" secondAttribute="top" id="H0F-Sd-5Gl"/>
+                            <constraint firstItem="cpv-qJ-YsN" firstAttribute="trailing" secondItem="NJX-7z-Eoc" secondAttribute="trailing" id="Lyo-dB-6jz"/>
                             <constraint firstItem="NSw-PC-c4u" firstAttribute="top" secondItem="vDu-zF-Fre" secondAttribute="top" id="Ms5-WQ-rbz"/>
+                            <constraint firstItem="cpv-qJ-YsN" firstAttribute="leading" secondItem="NJX-7z-Eoc" secondAttribute="leading" id="Qbd-OL-Fc6"/>
                             <constraint firstItem="NSw-PC-c4u" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" id="Qgx-mC-LU9"/>
+                            <constraint firstItem="BLT-XG-scR" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" constant="46" id="gj2-QI-eqn"/>
+                            <constraint firstItem="vOH-zf-teA" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" constant="110" id="gzv-a4-hg4"/>
+                            <constraint firstItem="BLT-XG-scR" firstAttribute="top" secondItem="vDu-zF-Fre" secondAttribute="top" constant="156" id="kCR-yj-nbF"/>
+                            <constraint firstItem="NJX-7z-Eoc" firstAttribute="top" secondItem="vOH-zf-teA" secondAttribute="bottom" constant="48" id="vL9-R3-bLr"/>
+                            <constraint firstItem="vOH-zf-teA" firstAttribute="top" secondItem="BLT-XG-scR" secondAttribute="bottom" constant="8" id="vei-ne-YKz"/>
+                            <constraint firstItem="vDu-zF-Fre" firstAttribute="trailing" secondItem="NJX-7z-Eoc" secondAttribute="trailing" constant="16" id="wya-mF-Iop"/>
+                            <constraint firstItem="cpv-qJ-YsN" firstAttribute="bottom" secondItem="NJX-7z-Eoc" secondAttribute="bottom" id="xH0-Pp-l8w"/>
                         </constraints>
                     </view>
                     <connections>
@@ -65,8 +87,12 @@
     </scenes>
     <resources>
         <image name="chevron.left" catalog="system" width="96" height="128"/>
+        <image name="plus.circle.fill" catalog="system" width="128" height="121"/>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+        <systemColor name="systemOrangeColor">
+            <color red="1" green="0.58431372549019611" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
     </resources>
 </document>

@@ -18,6 +18,10 @@ class PlusViewController: UIViewController {
       super.viewDidLoad()
       
       picker.delegate = self
+      
+      catImageView.layer.cornerRadius = 8
+      catImageView.layer.borderColor = UIColor.orange.cgColor
+      catImageView.layer.borderWidth = 1
     }
   
   @IBAction func backButtonTouchUpInside(_ sender: Any) {
