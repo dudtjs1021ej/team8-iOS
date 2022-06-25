@@ -45,6 +45,7 @@
 		FA1D0CB0286771EF00DE5516 /* FeedCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = FA1D0CAE286771EF00DE5516 /* FeedCell.xib */; };
 		FA1D0CB72867785000DE5516 /* UIColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA1D0CB62867785000DE5516 /* UIColor.swift */; };
 		FA1D0CBC28677D2800DE5516 /* FeedResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA1D0CBB28677D2800DE5516 /* FeedResponse.swift */; };
+		FA1D0CBE2867854800DE5516 /* UIImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA1D0CBD2867854800DE5516 /* UIImageView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -86,6 +87,7 @@
 		FA1D0CAE286771EF00DE5516 /* FeedCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = FeedCell.xib; sourceTree = "<group>"; };
 		FA1D0CB62867785000DE5516 /* UIColor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIColor.swift; sourceTree = "<group>"; };
 		FA1D0CBB28677D2800DE5516 /* FeedResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedResponse.swift; sourceTree = "<group>"; };
+		FA1D0CBD2867854800DE5516 /* UIImageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIImageView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -260,6 +262,7 @@
 			isa = PBXGroup;
 			children = (
 				FA1D0CB62867785000DE5516 /* UIColor.swift */,
+				FA1D0CBD2867854800DE5516 /* UIImageView.swift */,
 			);
 			path = Extension;
 			sourceTree = "<group>";
@@ -398,6 +401,7 @@
 				1B2E52AE2866F20000A636E6 /* CatMainViewController.swift in Sources */,
 				FA1D0C952866FED200DE5516 /* FeedViewController.swift in Sources */,
 				FA1D0C602866D9E200DE5516 /* SceneDelegate.swift in Sources */,
+				FA1D0CBE2867854800DE5516 /* UIImageView.swift in Sources */,
 				FA1D0CA62867527F00DE5516 /* CatInfoCell.swift in Sources */,
 				FA1D0CA3286737D400DE5516 /* CircleTransition.swift in Sources */,
 				FA1D0C9A2867006800DE5516 /* PlusViewController.swift in Sources */,
@@ -549,9 +553,11 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = L3ZPWB4HNK;
+				DEVELOPMENT_TEAM = 9738W25PF4;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = GDGTeam8/Info.plist;
+				INFOPLIST_KEY_NSCameraUsageDescription = "카메라를 사용합니다.";
+				INFOPLIST_KEY_NSLocationWhenInUseUsageDescription = "귀여운 고양이 사진을 위해 위치 공유를 허용하시겠습니까?";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
@@ -576,9 +582,11 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = L3ZPWB4HNK;
+				DEVELOPMENT_TEAM = 9738W25PF4;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = GDGTeam8/Info.plist;
+				INFOPLIST_KEY_NSCameraUsageDescription = "카메라를 사용합니다.";
+				INFOPLIST_KEY_NSLocationWhenInUseUsageDescription = "귀여운 고양이 사진을 위해 위치 공유를 허용하시겠습니까?";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";

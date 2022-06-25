@@ -13,6 +13,8 @@ class TabBarViewController: UITabBarController, UITabBarControllerDelegate {
   
   override func viewDidLoad() {
     super.viewDidLoad()
+    UITabBar.appearance().tintColor = .mainColor
+    
     self.delegate = self
     self.view.backgroundColor = .white
     print("MainTabBarController - viewDidLoad() called")
@@ -22,7 +24,7 @@ class TabBarViewController: UITabBarController, UITabBarControllerDelegate {
     
     let FeedStoryboard = UIStoryboard(name: "FeedViewController", bundle: nil)
     let feedVC = FeedStoryboard.instantiateViewController(withIdentifier: "FeedViewController")
-   // let feedVC = CatDetailViewController()
+
     let firstNC = UINavigationController.init(rootViewController: catMainVC)
     let thirdNC = UINavigationController.init(rootViewController: feedVC)
     let finalVC = UINavigationController.init()
