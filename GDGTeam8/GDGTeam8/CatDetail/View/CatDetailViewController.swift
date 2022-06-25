@@ -6,10 +6,15 @@
 //
 
 import UIKit
+import Alamofire
 
 class CatDetailViewController: UIViewController {
   
   @IBOutlet weak var feedCollectionView: UICollectionView!
+  
+  var id: Int?
+  private var catModel: CatModel?
+  private var feedsModel: CatFeedsModel?
   
   override func viewDidLoad() {
     super.viewDidLoad()
@@ -18,7 +23,36 @@ class CatDetailViewController: UIViewController {
     feedCollectionView.register(UINib(nibName: "CatFeedPlusCell", bundle: .main), forCellWithReuseIdentifier: "CatFeedPlusCell")
     feedCollectionView.delegate = self
     feedCollectionView.dataSource = self
-
+    
+    setModel()
+  }
+  
+  func setModel() {
+    guard let id = id else { return }
+    
+    if
+      let url = URL(string: "http://3.34.197.35:3000/cats/"),
+      var request = try? URLRequest(url: url, method: .get) {
+      
+      request.url?.appendPathComponent("\(id)")
+      
+      AF.request(request).responseDecodable(of: WrapperCatModel.self) { response in
+        self.catModel = response.value?.cat
+        self.feedCollectionView.reloadData()
+      }
+    }
+    
+    if
+      let url = URL(string: "http://3.34.197.35:3000/feeds/cat/"),
+      var request = try? URLRequest(url: url, method: .get) {
+      
+      request.url?.appendPathComponent("\(id)")
+      
+      AF.request(request).responseDecodable(of: CatFeedsModel.self) { response in
+        self.feedsModel = response.value
+        self.feedCollectionView.reloadData()
+      }
+    }
   }
 }
 
@@ -33,7 +67,7 @@ extension CatDetailViewController: UICollectionViewDelegate, UICollectionViewDat
       return 1
     }
     else {
-      return 10
+      return feedsModel?.feeds.count ?? 0
     }
     
   }
@@ -41,6 +75,10 @@ extension CatDetailViewController: UICollectionViewDelegate, UICollectionViewDat
   func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
     if indexPath.section == 0 {
       guard let cell = feedCollectionView.dequeueReusableCell(withReuseIdentifier: "CatInfoCell", for: indexPath) as? CatInfoCell else { return UICollectionViewCell() }
+      
+      cell.titleLabel.text = catModel?.name
+      cell.contentLabel.text = catModel?.description
+      
       return cell
     }
     else {
@@ -51,6 +89,12 @@ extension CatDetailViewController: UICollectionViewDelegate, UICollectionViewDat
       
       else {
         guard let cell = feedCollectionView.dequeueReusableCell(withReuseIdentifier: "CatFeedCell", for: indexPath) as? CatFeedCell else { return UICollectionViewCell() }
+        
+        let model = feedsModel?.feeds[indexPath.item]
+        
+        cell.titleLabel.text = model?.title
+        cell.descriptionLabel.text = ""
+        
         return cell
         
       }

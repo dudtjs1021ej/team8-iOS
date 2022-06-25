@@ -24,3 +24,7 @@ struct CatModel: Codable {
         case description
     }
 }
+
+struct WrapperCatModel: Codable {
+    let cat: CatModel
+}

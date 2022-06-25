@@ -17,6 +17,8 @@
 		1B2E52BF2867554300A636E6 /* CatRequestModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B2E52BE2867554300A636E6 /* CatRequestModel.swift */; };
 		1B2E52C12867556500A636E6 /* CatModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B2E52C02867556500A636E6 /* CatModel.swift */; };
 		1BB34F9B28676CBE00489FF0 /* CatModelResult.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1BB34F9A28676CBE00489FF0 /* CatModelResult.swift */; };
+		1BD47629286785EC00F08BDB /* CatFeedModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1BD47628286785EC00F08BDB /* CatFeedModel.swift */; };
+		1BD4762B28678AED00F08BDB /* CatFeedsModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1BD4762A28678AED00F08BDB /* CatFeedsModel.swift */; };
 		FA1D0C5E2866D9E200DE5516 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA1D0C5D2866D9E200DE5516 /* AppDelegate.swift */; };
 		FA1D0C602866D9E200DE5516 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA1D0C5F2866D9E200DE5516 /* SceneDelegate.swift */; };
 		FA1D0C622866D9E200DE5516 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA1D0C612866D9E200DE5516 /* ViewController.swift */; };
@@ -54,6 +56,8 @@
 		1B2E52BE2867554300A636E6 /* CatRequestModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CatRequestModel.swift; sourceTree = "<group>"; };
 		1B2E52C02867556500A636E6 /* CatModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CatModel.swift; sourceTree = "<group>"; };
 		1BB34F9A28676CBE00489FF0 /* CatModelResult.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CatModelResult.swift; sourceTree = "<group>"; };
+		1BD47628286785EC00F08BDB /* CatFeedModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CatFeedModel.swift; sourceTree = "<group>"; };
+		1BD4762A28678AED00F08BDB /* CatFeedsModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CatFeedsModel.swift; sourceTree = "<group>"; };
 		FA1D0C5A2866D9E200DE5516 /* GDGTeam8.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = GDGTeam8.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		FA1D0C5D2866D9E200DE5516 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		FA1D0C5F2866D9E200DE5516 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -112,6 +116,15 @@
 			path = CatMain;
 			sourceTree = "<group>";
 		};
+		1BD47627286785DE00F08BDB /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				1BD47628286785EC00F08BDB /* CatFeedModel.swift */,
+				1BD4762A28678AED00F08BDB /* CatFeedsModel.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
 		FA1D0C512866D9E200DE5516 = {
 			isa = PBXGroup;
 			children = (
@@ -153,18 +166,11 @@
 		FA1D0C752866F0B400DE5516 /* CatDetail */ = {
 			isa = PBXGroup;
 			children = (
-				FA1D0C7A2866F38200DE5516 /* Model */,
+				1BD47627286785DE00F08BDB /* Model */,
 				FA1D0C7B2866F38A00DE5516 /* View */,
 				FA1D0C7C2866F39100DE5516 /* Controller */,
 			);
 			path = CatDetail;
-			sourceTree = "<group>";
-		};
-		FA1D0C7A2866F38200DE5516 /* Model */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Model;
 			sourceTree = "<group>";
 		};
 		FA1D0C7B2866F38A00DE5516 /* View */ = {
@@ -372,6 +378,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				FA1D0CAA28676D5900DE5516 /* CatFeedPlusCell.swift in Sources */,
+				1BD47629286785EC00F08BDB /* CatFeedModel.swift in Sources */,
 				FA1D0CB72867785000DE5516 /* UIColor.swift in Sources */,
 				FA1D0CAF286771EF00DE5516 /* FeedCell.swift in Sources */,
 				FA1D0C622866D9E200DE5516 /* ViewController.swift in Sources */,
@@ -384,6 +391,7 @@
 				1BB34F9B28676CBE00489FF0 /* CatModelResult.swift in Sources */,
 				FA1D0C5E2866D9E200DE5516 /* AppDelegate.swift in Sources */,
 				1B2E52B728672EC100A636E6 /* CatMainPageViewController.swift in Sources */,
+				1BD4762B28678AED00F08BDB /* CatFeedsModel.swift in Sources */,
 				FA1D0CBC28677D2800DE5516 /* FeedResponse.swift in Sources */,
 				1B2E52B32866FB9600A636E6 /* Location.swift in Sources */,
 				1B2E52BF2867554300A636E6 /* CatRequestModel.swift in Sources */,
