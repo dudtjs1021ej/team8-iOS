@@ -104,6 +104,7 @@ scription Lorem iets..</string>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="Ni6-Q1-5eW"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <gestureRecognizers/>
                         <constraints>
                             <constraint firstItem="92I-1Y-Szy" firstAttribute="top" secondItem="ApT-tt-EJg" secondAttribute="bottom" constant="8" id="429-PV-q8G"/>
                             <constraint firstItem="Ni6-Q1-5eW" firstAttribute="bottom" secondItem="4AE-UI-eo3" secondAttribute="bottom" constant="29" id="6hu-Lh-N8F"/>
@@ -116,15 +117,24 @@ scription Lorem iets..</string>
                             <constraint firstItem="92I-1Y-Szy" firstAttribute="leading" secondItem="ApT-tt-EJg" secondAttribute="leading" id="ykf-IB-YCi"/>
                             <constraint firstItem="ApT-tt-EJg" firstAttribute="top" secondItem="4AE-UI-eo3" secondAttribute="top" constant="5" id="zqm-RY-dJu"/>
                         </constraints>
+                        <connections>
+                            <outletCollection property="gestureRecognizers" destination="lPe-wU-0t0" appends="YES" id="0OA-eW-P8Z"/>
+                        </connections>
                     </view>
                     <size key="freeformSize" width="414" height="137"/>
                     <connections>
                         <outlet property="catDescriptionLabel" destination="92I-1Y-Szy" id="AH9-M5-JTK"/>
                         <outlet property="catNameLabel" destination="ApT-tt-EJg" id="eJr-vb-yqB"/>
                         <outlet property="mainImageView" destination="4AE-UI-eo3" id="2No-bi-6Bv"/>
+                        <outlet property="viewTapGesture" destination="lPe-wU-0t0" id="pPb-aD-K3m"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Shq-Jz-Roc" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+                <tapGestureRecognizer id="lPe-wU-0t0">
+                    <connections>
+                        <action selector="viewTapGestureAction:" destination="pZh-ar-dAz" id="wFW-jM-MGC"/>
+                    </connections>
+                </tapGestureRecognizer>
             </objects>
             <point key="canvasLocation" x="928.98550724637687" y="394.41964285714283"/>
         </scene>

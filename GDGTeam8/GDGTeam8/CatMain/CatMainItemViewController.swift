@@ -10,6 +10,8 @@ import Alamofire
 
 class CatMainItemViewController: UIViewController {
     
+    @IBOutlet var viewTapGesture: UITapGestureRecognizer!
+    
     @IBOutlet weak var mainImageView: UIImageView!
     
     @IBOutlet weak var catNameLabel: UILabel!
@@ -51,5 +53,8 @@ class CatMainItemViewController: UIViewController {
     
     func setData(_ cat: CatModel) {
         self.model = cat
+    }
+    @IBAction func viewTapGestureAction(_ sender: UITapGestureRecognizer) {
+        print("haha")
     }
 }

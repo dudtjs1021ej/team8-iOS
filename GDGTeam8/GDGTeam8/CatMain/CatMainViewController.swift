@@ -39,6 +39,8 @@ class CatMainViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        self.navigationController?.isNavigationBarHidden = true
+        
         locationManager.delegate = self
         locationManager.requestWhenInUseAuthorization()
         
@@ -57,6 +59,11 @@ class CatMainViewController: UIViewController {
         
         pageContainer.alpha = 0
         mainMapView.delegate = self
+    }
+    
+    override func viewWillDisappear(_ animated: Bool) {
+        super.viewWillDisappear(animated)
+        self.navigationController?.isNavigationBarHidden = false
     }
     
     @discardableResult
