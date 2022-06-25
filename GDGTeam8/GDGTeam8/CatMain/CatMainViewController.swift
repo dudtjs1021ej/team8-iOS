@@ -20,6 +20,23 @@ class CatMainViewController: UIViewController {
     @IBOutlet weak var switchFeedButton: UIButton!
     
     @IBOutlet weak var pageContainer: UIView!
+    
+    private lazy var addButton: UIButton = {
+        let button = UIButton()
+        button.frame = CGRect(
+            x: mainMapView.frame.width - (96 + 48),
+            y: mainMapView.frame.height - (96 + 96),
+            width: 96,
+            height: 96
+        )
+        button.backgroundColor = .red
+        
+        return button
+    }()
+    
+    private var addButtonOriginalPosition: CGPoint!
+    private var addButtonMovedPosition: CGPoint!
+    
     private var pageController: CatMainPageViewController?
     
     private let model = CatRequestModel()
@@ -59,6 +76,12 @@ class CatMainViewController: UIViewController {
         
         pageContainer.alpha = 0
         mainMapView.delegate = self
+        
+        view.addSubview(addButton)
+        addButtonOriginalPosition = addButton.frame.origin
+        addButtonMovedPosition = addButtonOriginalPosition
+        addButtonMovedPosition?.y -= pageContainer.frame.height
+        
     }
     
     override func viewWillDisappear(_ animated: Bool) {
@@ -104,6 +127,7 @@ class CatMainViewController: UIViewController {
         
         UIView.animate(withDuration: 0.7) {
             self.pageContainer.alpha = 0
+            self.addButton.frame.origin = self.addButtonOriginalPosition
         }
     }
     
@@ -159,6 +183,7 @@ extension CatMainViewController: MKMapViewDelegate {
         
         UIView.animate(withDuration: 0.7) {
             self.pageContainer.alpha = 1
+            self.addButton.frame.origin = self.addButtonMovedPosition
         }
     }
     
@@ -168,6 +193,7 @@ extension CatMainViewController: MKMapViewDelegate {
         
         UIView.animate(withDuration: 0.7) {
             self.pageContainer.alpha = 0
+            self.addButton.frame.origin = self.addButtonOriginalPosition
         }
     }
 }
