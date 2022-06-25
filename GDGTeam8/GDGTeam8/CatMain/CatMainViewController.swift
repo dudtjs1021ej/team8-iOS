@@ -18,6 +18,8 @@ class CatMainViewController: UIViewController {
     
     @IBOutlet weak var switchFeedButton: UIButton!
     
+    @IBOutlet weak var pageContainer: UIView!
+    
     let locationManager = CLLocationManager()
     
     let mockLocations: [Location] = [
@@ -28,6 +30,10 @@ class CatMainViewController: UIViewController {
     ]
     
     let spanValue = 0.03
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+    }
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -43,6 +49,13 @@ class CatMainViewController: UIViewController {
         
         if let marketKully = mockLocations.first {
             goLocation(marketKully, delta: spanValue)
+        }
+        pageContainer.alpha = 0
+        self.pageContainer.bounds.origin.y -= self.pageContainer.frame.height
+        
+        UIView.animate(withDuration: 2) {
+            self.pageContainer.alpha = 1
+            self.pageContainer.bounds.origin.y += self.pageContainer.frame.height
         }
     }
     
@@ -109,4 +122,8 @@ extension CatMainViewController: CLLocationManagerDelegate {
         locationManager
             .stopUpdatingLocation()
     }
+}
+
+private extension CLLocationManager {
+    
 }
