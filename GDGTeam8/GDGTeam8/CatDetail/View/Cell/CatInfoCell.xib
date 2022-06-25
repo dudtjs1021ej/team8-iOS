@@ -349,6 +349,7 @@
             <size key="customSize" width="400" height="481"/>
             <connections>
                 <outlet property="contentLabel" destination="pRh-Iw-jCk" id="zjP-Da-Lcn"/>
+                <outlet property="imageView" destination="Zk8-9R-De1" id="cSN-VU-xUo"/>
                 <outlet property="starButton" destination="cPQ-ef-xo7" id="Jm3-AD-x8d"/>
                 <outlet property="titleLabel" destination="uzH-fh-eev" id="ggc-FO-YSm"/>
             </connections>
