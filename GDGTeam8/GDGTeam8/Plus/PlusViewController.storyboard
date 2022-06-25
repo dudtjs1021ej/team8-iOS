@@ -30,6 +30,19 @@
                                     <action selector="backButtonTouchUpInside:" destination="Y6W-OH-hqX" eventType="touchUpInside" id="J7m-Go-Bk7"/>
                                 </connections>
                             </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="cpv-qJ-YsN">
+                                <rect key="frame" x="325" y="152" width="72" height="31"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="plain" title="camera"/>
+                                <connections>
+                                    <action selector="cameraBttuonTouchUpInside:" destination="Y6W-OH-hqX" eventType="touchUpInside" id="ZfL-jO-Hkz"/>
+                                </connections>
+                            </button>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="NJX-7z-Eoc">
+                                <rect key="frame" x="95" y="135" width="187" height="116"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="vDu-zF-Fre"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
@@ -40,10 +53,14 @@
                             <constraint firstItem="NSw-PC-c4u" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" id="Qgx-mC-LU9"/>
                         </constraints>
                     </view>
+                    <connections>
+                        <outlet property="cameraButton" destination="cpv-qJ-YsN" id="xCI-Eh-hAq"/>
+                        <outlet property="catImageView" destination="NJX-7z-Eoc" id="Af2-sG-wAo"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Ief-a0-LHa" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="45" y="84"/>
+            <point key="canvasLocation" x="44.927536231884062" y="83.705357142857139"/>
         </scene>
     </scenes>
     <resources>
