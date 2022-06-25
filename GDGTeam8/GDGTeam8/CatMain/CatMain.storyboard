@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="20037" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="Y6W-OH-hqX">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="20020"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Cat Main View Controller-->
+        <scene sceneID="s0d-6b-0kx">
+            <objects>
+                <viewController id="Y6W-OH-hqX" customClass="CatMainViewController" customModule="GDGTeam8" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="5EZ-qb-Rvc">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" mapType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="Ijv-c7-m6g">
+                                <rect key="frame" x="0.0" y="44" width="414" height="682"/>
+                            </mapView>
+                            <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="16" translatesAutoresizingMaskIntoConstraints="NO" id="64Q-4Z-wVF">
+                                <rect key="frame" x="16" y="742" width="382" height="120"/>
+                                <subviews>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Sqw-bT-YZ6">
+                                        <rect key="frame" x="0.0" y="0.0" width="116.5" height="120"/>
+                                        <color key="backgroundColor" systemColor="labelColor"/>
+                                        <state key="normal" title="Button"/>
+                                        <buttonConfiguration key="configuration" style="plain" title="Map"/>
+                                        <connections>
+                                            <action selector="switchMapButtonTouchUpInside:" destination="Y6W-OH-hqX" eventType="touchUpInside" id="h5s-iM-iZ7"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="SKA-m0-cIA">
+                                        <rect key="frame" x="132.5" y="0.0" width="117" height="120"/>
+                                        <color key="backgroundColor" systemColor="labelColor"/>
+                                        <state key="normal" title="Button"/>
+                                        <buttonConfiguration key="configuration" style="plain" title="+"/>
+                                        <connections>
+                                            <action selector="createFeedButtonTouchUpInside:" destination="Y6W-OH-hqX" eventType="touchUpInside" id="DSL-lF-pqc"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="NaN-hM-HNy">
+                                        <rect key="frame" x="265.5" y="0.0" width="116.5" height="120"/>
+                                        <color key="backgroundColor" systemColor="labelColor"/>
+                                        <state key="normal" title="Button"/>
+                                        <buttonConfiguration key="configuration" style="plain" title="Feed"/>
+                                        <connections>
+                                            <action selector="switchFeedButtonTouchUpInside:" destination="Y6W-OH-hqX" eventType="touchUpInside" id="Xsf-qB-e57"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="120" id="uA9-eE-kpg"/>
+                                </constraints>
+                            </stackView>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="vDu-zF-Fre"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="64Q-4Z-wVF" firstAttribute="top" secondItem="Ijv-c7-m6g" secondAttribute="bottom" constant="16" id="CgK-ME-MQX"/>
+                            <constraint firstItem="Ijv-c7-m6g" firstAttribute="top" secondItem="vDu-zF-Fre" secondAttribute="top" id="NU2-ID-oIg"/>
+                            <constraint firstItem="vDu-zF-Fre" firstAttribute="bottom" secondItem="64Q-4Z-wVF" secondAttribute="bottom" id="ZYQ-h2-jgc"/>
+                            <constraint firstItem="Ijv-c7-m6g" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" id="fg2-kI-vNa"/>
+                            <constraint firstItem="vDu-zF-Fre" firstAttribute="trailing" secondItem="64Q-4Z-wVF" secondAttribute="trailing" constant="16" id="l5s-y2-BNS"/>
+                            <constraint firstItem="vDu-zF-Fre" firstAttribute="trailing" secondItem="Ijv-c7-m6g" secondAttribute="trailing" id="uh1-3j-WKK"/>
+                            <constraint firstItem="64Q-4Z-wVF" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" constant="16" id="vvS-We-Vaw"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="createFeedButton" destination="SKA-m0-cIA" id="JTO-ff-mUe"/>
+                        <outlet property="mainMapView" destination="Ijv-c7-m6g" id="Fno-bP-W9Z"/>
+                        <outlet property="switchFeedButton" destination="NaN-hM-HNy" id="XXC-J0-AMz"/>
+                        <outlet property="switchMapButton" destination="Sqw-bT-YZ6" id="mdm-HG-Pxb"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Ief-a0-LHa" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="121.73913043478262" y="118.52678571428571"/>
+        </scene>
+    </scenes>
+    <resources>
+        <systemColor name="labelColor">
+            <color white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+    </resources>
+</document>
