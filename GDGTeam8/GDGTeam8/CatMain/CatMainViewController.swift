@@ -20,15 +20,33 @@ class CatMainViewController: UIViewController {
     
     let locationManager = CLLocationManager()
     
+    let mockLocations: [Location] = [
+        Location(longitude: 127.033466, latitude: 37.5000868, title: "마켓컬리", subTitle: "MarketKully") // 마켓컬리
+        , Location(longitude: 126.895297, latitude: 37.4820956, title: "당근마켓", subTitle: "CarrotMarket") // 당근마켓
+        , Location(longitude: 127.044359, latitude: 37.5036694, title: "긱플", subTitle: "GigPlay") // 긱플
+        , Location(longitude: 127.025764, latitude: 37.4967280, title: "오늘의집", subTitle: "TodayHouse") // 오늘의 집
+    ]
+    
+    let spanValue = 0.03
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
         locationManager.delegate = self
         locationManager.requestWhenInUseAuthorization()
+        
+        for location in mockLocations {
+            setPin(location, delta: spanValue, title: location.title, subTitle: location.subTitle)
+        }
+        
         locationManager.startUpdatingLocation()
-        mainMapView.showsUserLocation = true
+        
+        if let marketKully = mockLocations.first {
+            goLocation(marketKully, delta: spanValue)
+        }
     }
     
+    @discardableResult
     func goLocation(_ location: Location, delta span: Double) -> CLLocationCoordinate2D {
         let pLocation = CLLocationCoordinate2DMake(location.latitude, location.longitude)
         let spanValue = MKCoordinateSpan(latitudeDelta: span, longitudeDelta: span)
@@ -59,8 +77,16 @@ class CatMainViewController: UIViewController {
 
 extension CatMainViewController: CLLocationManagerDelegate {
     func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
-        guard let pLocation = locations.last else { return }
-        _ = goLocation(Location(longitude: pLocation.coordinate.longitude, latitude: pLocation.coordinate.latitude), delta: 0.01)
+        guard
+            let pLocation = locations.last,
+            let location = mockLocations.first(where: { mock in
+                mock.latitude == pLocation.coordinate.latitude && mock.longitude == pLocation.coordinate.longitude
+            })
+        else {
+            return
+        }
+        
+        _ = goLocation(location, delta: spanValue)
         CLGeocoder().reverseGeocodeLocation(pLocation) { placeMarks, error in
             let pm = placeMarks?.first
             

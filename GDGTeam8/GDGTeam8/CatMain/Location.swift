@@ -10,4 +10,6 @@ import Foundation
 struct Location: Codable {
     let longitude: Double // 위도
     let latitude: Double // 경도
+    let title: String
+    let subTitle: String
 }
