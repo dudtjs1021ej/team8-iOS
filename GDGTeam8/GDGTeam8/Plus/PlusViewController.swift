@@ -18,6 +18,10 @@ class PlusViewController: UIViewController {
       super.viewDidLoad()
       
       picker.delegate = self
+      
+      catImageView.layer.cornerRadius = 8
+      catImageView.layer.borderColor = UIColor.orange.cgColor
+      catImageView.layer.borderWidth = 1
     }
   
   @IBAction func backButtonTouchUpInside(_ sender: Any) {
@@ -37,7 +41,9 @@ class PlusViewController: UIViewController {
 extension PlusViewController: UIImagePickerControllerDelegate,UINavigationControllerDelegate {
   
   func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
-    if let image = info[UIImagePickerController.InfoKey.originalImage] as? UIImage {         catImageView.image = image
+    if let image = info[UIImagePickerController.InfoKey.originalImage] as? UIImage {
+      catImageView.image = image
+      cameraButton.isHidden = true
     }
     
     let fetchOptions = PHFetchOptions()
