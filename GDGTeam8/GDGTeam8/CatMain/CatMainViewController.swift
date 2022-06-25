@@ -21,14 +21,17 @@ class CatMainViewController: UIViewController {
     
     @IBOutlet weak var pageContainer: UIView!
     
+    private let model = CatRequestModel()
+    
     private let locationManager = CLLocationManager()
     
-    private let mockLocations: [Location] = [
-        Location(longitude: 127.033466, latitude: 37.5000868, title: "마켓컬리", subTitle: "MarketKully") // 마켓컬리
-        , Location(longitude: 126.895297, latitude: 37.4820956, title: "당근마켓", subTitle: "CarrotMarket") // 당근마켓
-        , Location(longitude: 127.044359, latitude: 37.5036694, title: "긱플", subTitle: "GigPlay") // 긱플
-        , Location(longitude: 127.025764, latitude: 37.4967280, title: "오늘의집", subTitle: "TodayHouse") // 오늘의 집
-    ]
+    private var catData = [CatModel]() {
+        didSet {
+            for cat in catData {
+                setPin(cat, delta: spanValue, title: cat.name, subTitle: cat.description)
+            }
+        }
+    }
     
     private let spanValue = 0.03
     
@@ -38,14 +41,16 @@ class CatMainViewController: UIViewController {
         locationManager.delegate = self
         locationManager.requestWhenInUseAuthorization()
         
-        for location in mockLocations {
-            setPin(location, delta: spanValue, title: location.title, subTitle: location.subTitle)
+        model.getAllCats { result in
+            if let result = result as? [CatModel] {
+                self.catData = result
+            }
         }
         
         locationManager.startUpdatingLocation()
         
-        if let marketKully = mockLocations.first {
-            goLocation(marketKully, delta: spanValue)
+        if let cat = catData.first {
+            goLocation(cat, delta: spanValue)
         }
         
         pageContainer.alpha = 0
@@ -53,8 +58,12 @@ class CatMainViewController: UIViewController {
     }
     
     @discardableResult
-    private func goLocation(_ location: Location, delta span: Double) -> CLLocationCoordinate2D {
-        let pLocation = CLLocationCoordinate2DMake(location.latitude, location.longitude)
+    private func goLocation(_ cat: CatModel, delta span: Double) -> CLLocationCoordinate2D {
+        
+        let latitude = Double(cat.latitude) ?? 0
+        let longitude = Double(cat.longitude) ?? 0
+        
+        let pLocation = CLLocationCoordinate2DMake(latitude, longitude)
         let spanValue = MKCoordinateSpan(latitudeDelta: span, longitudeDelta: span)
         let pRegion = MKCoordinateRegion(center: pLocation, span: spanValue)
         
@@ -63,9 +72,9 @@ class CatMainViewController: UIViewController {
         return pLocation
     }
     
-    private func setPin(_ location: Location, delta span: Double, title: String, subTitle: String) {
+    private func setPin(_ cat: CatModel, delta span: Double, title: String, subTitle: String) {
         let annotation = MKPointAnnotation()
-        annotation.coordinate = goLocation(location, delta: span)
+        annotation.coordinate = goLocation(cat, delta: span)
         annotation.title = title
         annotation.subtitle = subTitle
         mainMapView.addAnnotation(annotation)
@@ -94,8 +103,9 @@ extension CatMainViewController: CLLocationManagerDelegate {
     func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
         guard
             let pLocation = locations.last,
-            let location = mockLocations.first(where: { mock in
-                mock.latitude == pLocation.coordinate.latitude && mock.longitude == pLocation.coordinate.longitude
+            let location = catData.first(where: { mock in
+                Double(mock.latitude) ?? 0.0 == pLocation.coordinate.latitude
+                && Double(mock.longitude) ?? 0.0 == pLocation.coordinate.longitude
             })
         else {
             return
