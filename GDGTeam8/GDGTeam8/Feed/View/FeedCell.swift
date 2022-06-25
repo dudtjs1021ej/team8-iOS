@@ -9,9 +9,19 @@ import UIKit
 
 class FeedCell: UICollectionViewCell {
 
-    override func awakeFromNib() {
+  @IBOutlet weak var backView: UIView!
+  @IBOutlet weak var profileImageView: UIImageView!
+  
+  @IBOutlet weak var titleLabel: UILabel!
+  
+  @IBOutlet weak var contentLabel: UILabel!
+  
+  override func awakeFromNib() {
         super.awakeFromNib()
-        // Initialization code
+    backView.layer.cornerRadius = 8
+    backView.layer.borderColor = UIColor.borderGray.cgColor
+    backView.layer.borderWidth = 1
+    profileImageView.layer.cornerRadius = 11
     }
 
 }

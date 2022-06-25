@@ -41,6 +41,7 @@
 		FA1D0CAB28676D5900DE5516 /* CatFeedPlusCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = FA1D0CA928676D5900DE5516 /* CatFeedPlusCell.xib */; };
 		FA1D0CAF286771EF00DE5516 /* FeedCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA1D0CAD286771EF00DE5516 /* FeedCell.swift */; };
 		FA1D0CB0286771EF00DE5516 /* FeedCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = FA1D0CAE286771EF00DE5516 /* FeedCell.xib */; };
+		FA1D0CB72867785000DE5516 /* UIColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA1D0CB62867785000DE5516 /* UIColor.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -78,6 +79,7 @@
 		FA1D0CA928676D5900DE5516 /* CatFeedPlusCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CatFeedPlusCell.xib; sourceTree = "<group>"; };
 		FA1D0CAD286771EF00DE5516 /* FeedCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedCell.swift; sourceTree = "<group>"; };
 		FA1D0CAE286771EF00DE5516 /* FeedCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = FeedCell.xib; sourceTree = "<group>"; };
+		FA1D0CB62867785000DE5516 /* UIColor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIColor.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -127,6 +129,7 @@
 		FA1D0C5C2866D9E200DE5516 /* GDGTeam8 */ = {
 			isa = PBXGroup;
 			children = (
+				FA1D0CB52867784500DE5516 /* Extension */,
 				FA1D0CA02867063300DE5516 /* TabBarViewController.swift */,
 				FA1D0C972866FF3E00DE5516 /* Plus */,
 				FA1D0C922866FE7700DE5516 /* Feed */,
@@ -253,6 +256,14 @@
 			path = View;
 			sourceTree = "<group>";
 		};
+		FA1D0CB52867784500DE5516 /* Extension */ = {
+			isa = PBXGroup;
+			children = (
+				FA1D0CB62867785000DE5516 /* UIColor.swift */,
+			);
+			path = Extension;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -342,6 +353,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				FA1D0CAA28676D5900DE5516 /* CatFeedPlusCell.swift in Sources */,
+				FA1D0CB72867785000DE5516 /* UIColor.swift in Sources */,
 				FA1D0CAF286771EF00DE5516 /* FeedCell.swift in Sources */,
 				FA1D0C622866D9E200DE5516 /* ViewController.swift in Sources */,
 				FA1D0C8B2866F8EF00DE5516 /* FeedDetailViewController.swift in Sources */,
