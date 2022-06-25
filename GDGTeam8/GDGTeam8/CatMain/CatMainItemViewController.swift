@@ -6,10 +6,55 @@
 //
 
 import UIKit
+import Alamofire
 
 class CatMainItemViewController: UIViewController {
+    
+    @IBOutlet var viewTapGesture: UITapGestureRecognizer!
+    
+    @IBOutlet weak var mainImageView: UIImageView!
+    
+    @IBOutlet weak var catNameLabel: UILabel!
+    
+    @IBOutlet weak var catDescriptionLabel: UILabel!
+    
+    private var model: CatModel?
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-        self.view.backgroundColor = UIColor.init(red: CGFloat.random(in: 0.0...1.0), green: CGFloat.random(in: 0.0...1.0), blue: CGFloat.random(in: 0.0...1.0), alpha: 1)
+        mainImageView.layer.cornerRadius = mainImageView.frame.width / 2
+        setModelInView()
+    }
+    
+    private func setModelInView() {
+        guard let url = URL(string: model?.image_url ?? ""), var request = try? URLRequest(url: url, method: .get) else {
+            return
+        }
+        
+        request.timeoutInterval = 3.0
+        
+        AF.request(request).responseData { response in
+            var image: UIImage?
+            
+            switch response.result {
+            case .success(let data):
+                image = UIImage(data: data)
+            case .failure(let error):
+                print(error)
+                image = UIImage(systemName: "xmark.circle")
+            }
+            
+            self.mainImageView.image = image
+        }
+        
+        catNameLabel.text = model?.name
+        catDescriptionLabel.text = model?.description
+    }
+    
+    func setData(_ cat: CatModel) {
+        self.model = cat
+    }
+    @IBAction func viewTapGestureAction(_ sender: UITapGestureRecognizer) {
+        print("haha")
     }
 }

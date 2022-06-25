@@ -20,6 +20,7 @@ class CatMainViewController: UIViewController {
     @IBOutlet weak var switchFeedButton: UIButton!
     
     @IBOutlet weak var pageContainer: UIView!
+    private var pageController: CatMainPageViewController?
     
     private let model = CatRequestModel()
     
@@ -38,12 +39,15 @@ class CatMainViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        self.navigationController?.isNavigationBarHidden = true
+        
         locationManager.delegate = self
         locationManager.requestWhenInUseAuthorization()
         
         model.getAllCats { result in
             if let result = result as? [CatModel] {
                 self.catData = result
+                self.pageController?.reloadPage(self.catData)
             }
         }
         
@@ -55,6 +59,11 @@ class CatMainViewController: UIViewController {
         
         pageContainer.alpha = 0
         mainMapView.delegate = self
+    }
+    
+    override func viewWillDisappear(_ animated: Bool) {
+        super.viewWillDisappear(animated)
+        self.navigationController?.isNavigationBarHidden = false
     }
     
     @discardableResult
@@ -95,6 +104,12 @@ class CatMainViewController: UIViewController {
         
         UIView.animate(withDuration: 0.7) {
             self.pageContainer.alpha = 0
+        }
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if let pageController = segue.destination as? CatMainPageViewController {
+            self.pageController = pageController
         }
     }
 }
