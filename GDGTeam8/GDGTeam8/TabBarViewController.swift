@@ -9,8 +9,11 @@ import UIKit
 
 class TabBarViewController: UITabBarController, UITabBarControllerDelegate {
   
+  var currentIndex: Int = 0
+  
   override func viewDidLoad() {
     super.viewDidLoad()
+    self.delegate = self
     self.view.backgroundColor = .white
     print("MainTabBarController - viewDidLoad() called")
     
@@ -29,7 +32,6 @@ class TabBarViewController: UITabBarController, UITabBarControllerDelegate {
     let secondNC = UINavigationController.init(rootViewController: plusVC)
     let thirdNC = UINavigationController.init(rootViewController: feedVC)
     
-    
     self.viewControllers = [firstNC, secondNC, thirdNC]
     
     let firstTabBarItem = UITabBarItem(title: "Map", image: UIImage(systemName: "map.fill"), tag: 0)
@@ -40,7 +42,23 @@ class TabBarViewController: UITabBarController, UITabBarControllerDelegate {
     firstNC.tabBarItem = firstTabBarItem
     secondNC.tabBarItem = secondTabBarItem
     thirdNC.tabBarItem = thirdTabBarItem
-    
+  }
+  
+  func tabBarController(_ tabBarController: UITabBarController, shouldSelect viewController: UIViewController) -> Bool {
+    if let navVC = viewController as? UINavigationController, let _ = navVC.viewControllers.first as? PlusViewController {
+      print("PlusViewController")
+      
+      let plusStoryboard = UIStoryboard(name: "PlusViewController", bundle: nil)
+      let plusVC = plusStoryboard.instantiateViewController(withIdentifier: "PlusViewController")
+      plusVC.modalPresentationStyle = .fullScreen
+      present(plusVC, animated: true, completion: nil)
+      
+      return false
+    }
+
+    else {
+      return true
+    }
   }
   
 }
