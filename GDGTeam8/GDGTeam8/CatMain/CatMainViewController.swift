@@ -9,17 +9,32 @@ import UIKit
 import MapKit
 
 class CatMainViewController: UIViewController {
+    
+    let transition = CircularTransition()
 
     @IBOutlet weak var mainMapView: MKMapView!
     @IBOutlet var mainMapViewTapGestureRecognizer: UITapGestureRecognizer!
     
-    @IBOutlet weak var switchMapButton: UIButton!
-    
-    @IBOutlet weak var createFeedButton: UIButton!
-    
-    @IBOutlet weak var switchFeedButton: UIButton!
-    
     @IBOutlet weak var pageContainer: UIView!
+    
+    private lazy var addButton: UIButton = {
+        let button = UIButton()
+        button.frame = CGRect(
+            x: mainMapView.frame.width - (79 + 48),
+            y: mainMapView.frame.height - (79 + 79),
+            width: 79,
+            height: 79
+        )
+        button.setImage(UIImage(named: "addButtonImage"), for: .normal)
+        button.addTarget(self, action: #selector(addButtonTouchUpInside(_:)), for: .touchUpInside)
+        
+        return button
+    }()
+    
+    private var addButtonOriginalPosition: CGPoint!
+    private var addButtonMovedPosition: CGPoint!
+    
+    private var pageController: CatMainPageViewController?
     
     private let model = CatRequestModel()
     
@@ -38,12 +53,15 @@ class CatMainViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        self.navigationController?.isNavigationBarHidden = true
+        
         locationManager.delegate = self
         locationManager.requestWhenInUseAuthorization()
         
         model.getAllCats { result in
             if let result = result as? [CatModel] {
                 self.catData = result
+                self.pageController?.reloadPage(self.catData)
             }
         }
         
@@ -55,6 +73,17 @@ class CatMainViewController: UIViewController {
         
         pageContainer.alpha = 0
         mainMapView.delegate = self
+        
+        view.addSubview(addButton)
+        addButtonOriginalPosition = addButton.frame.origin
+        addButtonMovedPosition = addButtonOriginalPosition
+        addButtonMovedPosition?.y -= pageContainer.frame.height
+        
+    }
+    
+    override func viewWillDisappear(_ animated: Bool) {
+        super.viewWillDisappear(animated)
+        self.navigationController?.isNavigationBarHidden = false
     }
     
     @discardableResult
@@ -80,21 +109,27 @@ class CatMainViewController: UIViewController {
         mainMapView.addAnnotation(annotation)
     }
     
-    @IBAction func switchMapButtonTouchUpInside(_ sender: UIButton) {
-    }
-    
-    @IBAction func createFeedButtonTouchUpInside(_ sender: UIButton) {
-    }
-    
-    @IBAction func switchFeedButtonTouchUpInside(_ sender: UIButton) {
-    }
-    
     @IBAction func mainMapViewTapGestureRecognizerAction(_ sender: UITapGestureRecognizer) {
         
         guard pageContainer.alpha == 1 else { return }
         
         UIView.animate(withDuration: 0.7) {
             self.pageContainer.alpha = 0
+            self.addButton.frame.origin = self.addButtonOriginalPosition
+        }
+    }
+    
+    @objc func addButtonTouchUpInside(_ sender: UIButton) {
+        let plusVC = UIStoryboard(name: "PlusViewController", bundle: nil).instantiateViewController(withIdentifier: "PlusViewController")
+        plusVC.modalPresentationStyle = .custom
+        plusVC.transitioningDelegate = self
+        present(plusVC, animated: true, completion: nil)
+        
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if let pageController = segue.destination as? CatMainPageViewController {
+            self.pageController = pageController
         }
     }
 }
@@ -144,6 +179,7 @@ extension CatMainViewController: MKMapViewDelegate {
         
         UIView.animate(withDuration: 0.7) {
             self.pageContainer.alpha = 1
+            self.addButton.frame.origin = self.addButtonMovedPosition
         }
     }
     
@@ -153,6 +189,25 @@ extension CatMainViewController: MKMapViewDelegate {
         
         UIView.animate(withDuration: 0.7) {
             self.pageContainer.alpha = 0
+            self.addButton.frame.origin = self.addButtonOriginalPosition
         }
     }
+}
+
+extension CatMainViewController: UIViewControllerTransitioningDelegate {
+  
+  func animationController(forPresented presented: UIViewController, presenting: UIViewController, source: UIViewController) -> UIViewControllerAnimatedTransitioning? {
+    transition.transitionMode = .present
+    transition.startingPoint = CGPoint(x: UIScreen.main.bounds.size.width/2, y: UIScreen.main.bounds.size.height - 60)
+    transition.circleColor = .white
+    return transition
+  }
+      
+  func animationController(forDismissed dismissed: UIViewController) -> UIViewControllerAnimatedTransitioning? {
+    
+    transition.transitionMode = .dismiss
+    transition.startingPoint = CGPoint(x: UIScreen.main.bounds.size.width/2, y: UIScreen.main.bounds.size.height - 60)
+    transition.circleColor = .white
+    return transition
+  }
 }
