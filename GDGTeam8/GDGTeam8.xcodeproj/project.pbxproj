@@ -47,6 +47,10 @@
 		FA1D0CBC28677D2800DE5516 /* FeedResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA1D0CBB28677D2800DE5516 /* FeedResponse.swift */; };
 		FA1D0CBE2867854800DE5516 /* UIImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA1D0CBD2867854800DE5516 /* UIImageView.swift */; };
 		FA1D0CC02867A9F600DE5516 /* UITextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA1D0CBF2867A9F600DE5516 /* UITextField.swift */; };
+		FA1D0CC32867AC3E00DE5516 /* CatNameViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA1D0CC12867AC3E00DE5516 /* CatNameViewController.swift */; };
+		FA1D0CC42867AC3E00DE5516 /* CatNameViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = FA1D0CC22867AC3E00DE5516 /* CatNameViewController.xib */; };
+		FA1D0CC72867AC6C00DE5516 /* DescriptionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA1D0CC52867AC6C00DE5516 /* DescriptionViewController.swift */; };
+		FA1D0CC82867AC6C00DE5516 /* DescriptionViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = FA1D0CC62867AC6C00DE5516 /* DescriptionViewController.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -90,6 +94,10 @@
 		FA1D0CBB28677D2800DE5516 /* FeedResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedResponse.swift; sourceTree = "<group>"; };
 		FA1D0CBD2867854800DE5516 /* UIImageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIImageView.swift; sourceTree = "<group>"; };
 		FA1D0CBF2867A9F600DE5516 /* UITextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UITextField.swift; sourceTree = "<group>"; };
+		FA1D0CC12867AC3E00DE5516 /* CatNameViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CatNameViewController.swift; sourceTree = "<group>"; };
+		FA1D0CC22867AC3E00DE5516 /* CatNameViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CatNameViewController.xib; sourceTree = "<group>"; };
+		FA1D0CC52867AC6C00DE5516 /* DescriptionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DescriptionViewController.swift; sourceTree = "<group>"; };
+		FA1D0CC62867AC6C00DE5516 /* DescriptionViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = DescriptionViewController.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -247,6 +255,10 @@
 			children = (
 				FA1D0C982867006800DE5516 /* PlusViewController.swift */,
 				FA1D0C9C2867029900DE5516 /* PlusViewController.storyboard */,
+				FA1D0CC12867AC3E00DE5516 /* CatNameViewController.swift */,
+				FA1D0CC22867AC3E00DE5516 /* CatNameViewController.xib */,
+				FA1D0CC52867AC6C00DE5516 /* DescriptionViewController.swift */,
+				FA1D0CC62867AC6C00DE5516 /* DescriptionViewController.xib */,
 			);
 			path = Plus;
 			sourceTree = "<group>";
@@ -362,11 +374,13 @@
 			buildActionMask = 2147483647;
 			files = (
 				FA1D0CA72867527F00DE5516 /* CatInfoCell.xib in Resources */,
+				FA1D0CC42867AC3E00DE5516 /* CatNameViewController.xib in Resources */,
 				FA1D0C872866F52100DE5516 /* CatDetailViewController.xib in Resources */,
 				FA1D0C8C2866F8EF00DE5516 /* FeedDetailViewController.xib in Resources */,
 				FA1D0C9F286703AE00DE5516 /* FeedViewController.storyboard in Resources */,
 				FA1D0C812866F46400DE5516 /* CatFeedCell.xib in Resources */,
 				FA1D0CAB28676D5900DE5516 /* CatFeedPlusCell.xib in Resources */,
+				FA1D0CC82867AC6C00DE5516 /* DescriptionViewController.xib in Resources */,
 				FA1D0C6A2866D9E300DE5516 /* LaunchScreen.storyboard in Resources */,
 				FA1D0C672866D9E300DE5516 /* Assets.xcassets in Resources */,
 				1B2E52B02866F22B00A636E6 /* CatMain.storyboard in Resources */,
@@ -384,6 +398,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				FA1D0CAA28676D5900DE5516 /* CatFeedPlusCell.swift in Sources */,
+				FA1D0CC72867AC6C00DE5516 /* DescriptionViewController.swift in Sources */,
 				1BD47629286785EC00F08BDB /* CatFeedModel.swift in Sources */,
 				FA1D0CB72867785000DE5516 /* UIColor.swift in Sources */,
 				FA1D0CAF286771EF00DE5516 /* FeedCell.swift in Sources */,
@@ -408,6 +423,7 @@
 				FA1D0CBE2867854800DE5516 /* UIImageView.swift in Sources */,
 				FA1D0CA62867527F00DE5516 /* CatInfoCell.swift in Sources */,
 				FA1D0CA3286737D400DE5516 /* CircleTransition.swift in Sources */,
+				FA1D0CC32867AC3E00DE5516 /* CatNameViewController.swift in Sources */,
 				FA1D0C9A2867006800DE5516 /* PlusViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -557,7 +573,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = L3ZPWB4HNK;
+				DEVELOPMENT_TEAM = 9738W25PF4;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = GDGTeam8/Info.plist;
 				INFOPLIST_KEY_NSCameraUsageDescription = "카메라를 사용합니다.";
@@ -586,7 +602,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = L3ZPWB4HNK;
+				DEVELOPMENT_TEAM = 9738W25PF4;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = GDGTeam8/Info.plist;
 				INFOPLIST_KEY_NSCameraUsageDescription = "카메라를 사용합니다.";
