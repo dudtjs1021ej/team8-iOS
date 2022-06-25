@@ -200,18 +200,10 @@
 		FA1D0C882866F8CF00DE5516 /* FeedDetail */ = {
 			isa = PBXGroup;
 			children = (
-				FA1D0C8D2866F96D00DE5516 /* Model */,
 				FA1D0C8E2866F97300DE5516 /* View */,
 				FA1D0C8F2866F97700DE5516 /* Controller */,
 			);
 			path = FeedDetail;
-			sourceTree = "<group>";
-		};
-		FA1D0C8D2866F96D00DE5516 /* Model */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Model;
 			sourceTree = "<group>";
 		};
 		FA1D0C8E2866F97300DE5516 /* View */ = {
