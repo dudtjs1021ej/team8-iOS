@@ -20,8 +20,8 @@
                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="v8z-OU-sMz">
                         <rect key="frame" x="0.0" y="0.0" width="165" height="165"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Se1-LO-AKo">
-                                <rect key="frame" x="62.5" y="24" width="40" height="18"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Se1-LO-AKo">
+                                <rect key="frame" x="16" y="24" width="133" height="18"/>
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
@@ -38,11 +38,13 @@ Lorem itsum..</string>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
+                            <constraint firstItem="Se1-LO-AKo" firstAttribute="leading" secondItem="v8z-OU-sMz" secondAttribute="leading" constant="16" id="4Pz-dr-a9I"/>
                             <constraint firstItem="Se1-LO-AKo" firstAttribute="centerX" secondItem="v8z-OU-sMz" secondAttribute="centerX" id="Sij-bZ-TKQ"/>
                             <constraint firstItem="o3o-pU-MMq" firstAttribute="top" secondItem="Se1-LO-AKo" secondAttribute="bottom" constant="8" id="Szi-oB-lZo"/>
                             <constraint firstItem="Se1-LO-AKo" firstAttribute="top" secondItem="v8z-OU-sMz" secondAttribute="top" constant="24" id="dZH-qc-MqE"/>
                             <constraint firstAttribute="trailing" secondItem="o3o-pU-MMq" secondAttribute="trailing" constant="16" id="jbo-jZ-PDM"/>
                             <constraint firstItem="o3o-pU-MMq" firstAttribute="leading" secondItem="v8z-OU-sMz" secondAttribute="leading" constant="16" id="jdE-LV-cpY"/>
+                            <constraint firstAttribute="trailing" secondItem="Se1-LO-AKo" secondAttribute="trailing" constant="16" id="k64-Ff-UwO"/>
                         </constraints>
                     </view>
                 </subviews>

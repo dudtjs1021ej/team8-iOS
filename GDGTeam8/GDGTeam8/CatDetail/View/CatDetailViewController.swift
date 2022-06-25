@@ -78,6 +78,9 @@ extension CatDetailViewController: UICollectionViewDelegate, UICollectionViewDat
       
       cell.titleLabel.text = catModel?.name
       cell.contentLabel.text = catModel?.description
+      if let urlString = catModel?.image_url {
+        cell.imageView.load(urlString: urlString)
+      }
       
       return cell
     }
