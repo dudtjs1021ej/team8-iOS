@@ -11,6 +11,7 @@ import MapKit
 class CatMainViewController: UIViewController {
 
     @IBOutlet weak var mainMapView: MKMapView!
+    @IBOutlet var mainMapViewTapGestureRecognizer: UITapGestureRecognizer!
     
     @IBOutlet weak var switchMapButton: UIButton!
     
@@ -48,13 +49,7 @@ class CatMainViewController: UIViewController {
         }
         
         pageContainer.alpha = 0
-        self.pageContainer.bounds.origin.y -= self.pageContainer.frame.height
-        
-        UIView.animate(withDuration: 0.7) { [weak pageContainer] in
-            guard let container = pageContainer else { return }
-            container.alpha = 1
-            container.bounds.origin.y += container.frame.height
-        }
+        mainMapView.delegate = self
     }
     
     @discardableResult
@@ -83,6 +78,15 @@ class CatMainViewController: UIViewController {
     }
     
     @IBAction func switchFeedButtonTouchUpInside(_ sender: UIButton) {
+    }
+    
+    @IBAction func mainMapViewTapGestureRecognizerAction(_ sender: UITapGestureRecognizer) {
+        
+        guard pageContainer.alpha == 1 else { return }
+        
+        UIView.animate(withDuration: 0.7) {
+            self.pageContainer.alpha = 0
+        }
     }
 }
 
@@ -119,5 +123,26 @@ extension CatMainViewController: CLLocationManagerDelegate {
         }
         locationManager
             .stopUpdatingLocation()
+    }
+}
+
+extension CatMainViewController: MKMapViewDelegate {
+    
+    func mapView(_ mapView: MKMapView, didSelect view: MKAnnotationView) {
+        
+        guard pageContainer.alpha == 0 else { return }
+        
+        UIView.animate(withDuration: 0.7) {
+            self.pageContainer.alpha = 1
+        }
+    }
+    
+    func mapView(_ mapView: MKMapView, regionWillChangeAnimated animated: Bool) {
+        
+        guard pageContainer.alpha == 1 else { return }
+        
+        UIView.animate(withDuration: 0.7) {
+            self.pageContainer.alpha = 0
+        }
     }
 }
