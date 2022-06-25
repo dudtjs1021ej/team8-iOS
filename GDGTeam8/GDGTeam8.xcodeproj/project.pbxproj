@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		1B2E52AE2866F20000A636E6 /* CatMainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B2E52AD2866F20000A636E6 /* CatMainViewController.swift */; };
+		1B2E52B02866F22B00A636E6 /* CatMain.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1B2E52AF2866F22B00A636E6 /* CatMain.storyboard */; };
 		FA1D0C5E2866D9E200DE5516 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA1D0C5D2866D9E200DE5516 /* AppDelegate.swift */; };
 		FA1D0C602866D9E200DE5516 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA1D0C5F2866D9E200DE5516 /* SceneDelegate.swift */; };
 		FA1D0C622866D9E200DE5516 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA1D0C612866D9E200DE5516 /* ViewController.swift */; };
@@ -16,6 +18,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		1B2E52AD2866F20000A636E6 /* CatMainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CatMainViewController.swift; sourceTree = "<group>"; };
+		1B2E52AF2866F22B00A636E6 /* CatMain.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = CatMain.storyboard; sourceTree = "<group>"; };
 		FA1D0C5A2866D9E200DE5516 /* GDGTeam8.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = GDGTeam8.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		FA1D0C5D2866D9E200DE5516 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		FA1D0C5F2866D9E200DE5516 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -37,6 +41,15 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		1B2E52B12866F23000A636E6 /* CatMain */ = {
+			isa = PBXGroup;
+			children = (
+				1B2E52AF2866F22B00A636E6 /* CatMain.storyboard */,
+				1B2E52AD2866F20000A636E6 /* CatMainViewController.swift */,
+			);
+			path = CatMain;
+			sourceTree = "<group>";
+		};
 		FA1D0C512866D9E200DE5516 = {
 			isa = PBXGroup;
 			children = (
@@ -60,6 +73,7 @@
 				FA1D0C5F2866D9E200DE5516 /* SceneDelegate.swift */,
 				FA1D0C612866D9E200DE5516 /* ViewController.swift */,
 				FA1D0C632866D9E200DE5516 /* Main.storyboard */,
+				1B2E52B12866F23000A636E6 /* CatMain */,
 				FA1D0C662866D9E300DE5516 /* Assets.xcassets */,
 				FA1D0C682866D9E300DE5516 /* LaunchScreen.storyboard */,
 				FA1D0C6B2866D9E300DE5516 /* Info.plist */,
@@ -127,6 +141,7 @@
 			files = (
 				FA1D0C6A2866D9E300DE5516 /* LaunchScreen.storyboard in Resources */,
 				FA1D0C672866D9E300DE5516 /* Assets.xcassets in Resources */,
+				1B2E52B02866F22B00A636E6 /* CatMain.storyboard in Resources */,
 				FA1D0C652866D9E200DE5516 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -140,6 +155,7 @@
 			files = (
 				FA1D0C622866D9E200DE5516 /* ViewController.swift in Sources */,
 				FA1D0C5E2866D9E200DE5516 /* AppDelegate.swift in Sources */,
+				1B2E52AE2866F20000A636E6 /* CatMainViewController.swift in Sources */,
 				FA1D0C602866D9E200DE5516 /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -289,6 +305,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = L3ZPWB4HNK;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = GDGTeam8/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
@@ -316,6 +333,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = L3ZPWB4HNK;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = GDGTeam8/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
