@@ -34,6 +34,7 @@ class CatMainPageViewController: UIPageViewController {
     
     func reloadPage(_ cats: [CatModel]) {
         self.cats = cats
+        self.pages.removeAll()
         
         for cat in cats {
             if let vc = CatMainPageViewController.vcInstance(name: String(describing: CatMainItemViewController.self)) as? CatMainItemViewController {

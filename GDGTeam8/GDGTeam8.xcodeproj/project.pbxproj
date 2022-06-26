@@ -20,6 +20,8 @@
 		1BD47629286785EC00F08BDB /* CatFeedModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1BD47628286785EC00F08BDB /* CatFeedModel.swift */; };
 		1BD4762B28678AED00F08BDB /* CatFeedsModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1BD4762A28678AED00F08BDB /* CatFeedsModel.swift */; };
 		1BD4762D2867B54B00F08BDB /* PostCat.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1BD4762C2867B54B00F08BDB /* PostCat.swift */; };
+		1BD476302867D2E900F08BDB /* BlurAlertViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1BD4762E2867D2E900F08BDB /* BlurAlertViewController.swift */; };
+		1BD476312867D2E900F08BDB /* BlurAlertViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1BD4762F2867D2E900F08BDB /* BlurAlertViewController.xib */; };
 		FA1C68892867BD83003CE491 /* PostCatRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA1C68882867BD83003CE491 /* PostCatRequest.swift */; };
 		FA1C688C2867CBAB003CE491 /* CatImageCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA1C688A2867CBAB003CE491 /* CatImageCell.swift */; };
 		FA1C688D2867CBAB003CE491 /* CatImageCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = FA1C688B2867CBAB003CE491 /* CatImageCell.xib */; };
@@ -70,6 +72,8 @@
 		1BD47628286785EC00F08BDB /* CatFeedModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CatFeedModel.swift; sourceTree = "<group>"; };
 		1BD4762A28678AED00F08BDB /* CatFeedsModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CatFeedsModel.swift; sourceTree = "<group>"; };
 		1BD4762C2867B54B00F08BDB /* PostCat.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostCat.swift; sourceTree = "<group>"; };
+		1BD4762E2867D2E900F08BDB /* BlurAlertViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BlurAlertViewController.swift; sourceTree = "<group>"; };
+		1BD4762F2867D2E900F08BDB /* BlurAlertViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = BlurAlertViewController.xib; sourceTree = "<group>"; };
 		FA1C68882867BD83003CE491 /* PostCatRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostCatRequest.swift; sourceTree = "<group>"; };
 		FA1C688A2867CBAB003CE491 /* CatImageCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CatImageCell.swift; sourceTree = "<group>"; };
 		FA1C688B2867CBAB003CE491 /* CatImageCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CatImageCell.xib; sourceTree = "<group>"; };
@@ -282,6 +286,8 @@
 				FA1D0CC22867AC3E00DE5516 /* CatNameViewController.xib */,
 				FA1D0CC52867AC6C00DE5516 /* DescriptionViewController.swift */,
 				FA1D0CC62867AC6C00DE5516 /* DescriptionViewController.xib */,
+				1BD4762E2867D2E900F08BDB /* BlurAlertViewController.swift */,
+				1BD4762F2867D2E900F08BDB /* BlurAlertViewController.xib */,
 			);
 			path = Plus;
 			sourceTree = "<group>";
@@ -406,6 +412,7 @@
 				FA1D0CAB28676D5900DE5516 /* CatFeedPlusCell.xib in Resources */,
 				FA1D0CC82867AC6C00DE5516 /* DescriptionViewController.xib in Resources */,
 				FA1D0C6A2866D9E300DE5516 /* LaunchScreen.storyboard in Resources */,
+				1BD476312867D2E900F08BDB /* BlurAlertViewController.xib in Resources */,
 				FA1D0C672866D9E300DE5516 /* Assets.xcassets in Resources */,
 				1B2E52B02866F22B00A636E6 /* CatMain.storyboard in Resources */,
 				FA1D0CB0286771EF00DE5516 /* FeedCell.xib in Resources */,
@@ -442,6 +449,7 @@
 				FA1D0C5E2866D9E200DE5516 /* AppDelegate.swift in Sources */,
 				1B2E52B728672EC100A636E6 /* CatMainPageViewController.swift in Sources */,
 				1BD4762B28678AED00F08BDB /* CatFeedsModel.swift in Sources */,
+				1BD476302867D2E900F08BDB /* BlurAlertViewController.swift in Sources */,
 				FA1D0CBC28677D2800DE5516 /* FeedResponse.swift in Sources */,
 				1B2E52B32866FB9600A636E6 /* Location.swift in Sources */,
 				1B2E52BF2867554300A636E6 /* CatRequestModel.swift in Sources */,
@@ -601,7 +609,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = 9738W25PF4;
+				DEVELOPMENT_TEAM = L3ZPWB4HNK;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = GDGTeam8/Info.plist;
 				INFOPLIST_KEY_NSCameraUsageDescription = "카메라를 사용합니다.";
@@ -630,7 +638,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = 9738W25PF4;
+				DEVELOPMENT_TEAM = L3ZPWB4HNK;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = GDGTeam8/Info.plist;
 				INFOPLIST_KEY_NSCameraUsageDescription = "카메라를 사용합니다.";

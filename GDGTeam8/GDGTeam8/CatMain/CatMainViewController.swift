@@ -55,10 +55,19 @@ class CatMainViewController: UIViewController {
         
         self.navigationController?.isNavigationBarHidden = true
         
+        NotificationCenter.default.addObserver(forName: Notification.Name.init(rawValue: "Complete"), object: nil, queue: nil) { notification in
+            
+            let blurView = BlurAlertViewController()
+            self.present(blurView, animated: true)
+            DispatchQueue.main.asyncAfter(deadline: .now() + 1.5) {
+                blurView.dismiss(animated: true)
+            }
+            
+            self.updatePin()
+        }
+        
         locationManager.delegate = self
         locationManager.requestWhenInUseAuthorization()
-        
-        updatePin()
         
         pageContainer.alpha = 0
         mainMapView.delegate = self
@@ -67,6 +76,7 @@ class CatMainViewController: UIViewController {
         addButtonOriginalPosition = addButton.frame.origin
         addButtonMovedPosition = addButtonOriginalPosition
         addButtonMovedPosition?.y -= pageContainer.frame.height
+        
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -78,7 +88,7 @@ class CatMainViewController: UIViewController {
         super.viewWillDisappear(animated)
     }
     
-    private func updatePin() {
+    func updatePin() {
         model.getAllCats { result in
             if let result = result as? [CatModel] {
                 self.catData = result
