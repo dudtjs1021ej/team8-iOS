@@ -15,4 +15,5 @@ struct InnerCatFeedsModel: Codable {
     let id: Int
     let cat_id: Int
     let title: String
+    let content: String
 }

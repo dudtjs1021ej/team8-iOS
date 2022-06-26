@@ -15,12 +15,14 @@ class CatDetailViewController: UIViewController {
   var id: Int?
   private var catModel: CatModel?
   private var feedsModel: CatFeedsModel?
+  var albums: [Album] = []
   
   override func viewDidLoad() {
     super.viewDidLoad()
     feedCollectionView.register(UINib(nibName: "CatFeedCell", bundle: .main), forCellWithReuseIdentifier: "CatFeedCell")
     feedCollectionView.register(UINib(nibName: "CatInfoCell", bundle: .main), forCellWithReuseIdentifier: "CatInfoCell")
     feedCollectionView.register(UINib(nibName: "CatFeedPlusCell", bundle: .main), forCellWithReuseIdentifier: "CatFeedPlusCell")
+    feedCollectionView.register(UINib(nibName: "CatImageCell", bundle: .main), forCellWithReuseIdentifier: "CatImageCell")
     feedCollectionView.delegate = self
     feedCollectionView.dataSource = self
     
@@ -59,11 +61,14 @@ class CatDetailViewController: UIViewController {
 
 extension CatDetailViewController: UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout {
   func numberOfSections(in collectionView: UICollectionView) -> Int {
-    return 2
+    return 3
   }
   
   func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
     if section == 0 {
+      return 1
+    }
+    else if section == 1 {
       return 1
     }
     else {
@@ -84,6 +89,13 @@ extension CatDetailViewController: UICollectionViewDelegate, UICollectionViewDat
       
       return cell
     }
+    
+    else if indexPath.section == 1 {
+      guard let cell = feedCollectionView.dequeueReusableCell(withReuseIdentifier: "CatImageCell", for: indexPath) as? CatImageCell else { return UICollectionViewCell() }
+     
+      return cell
+    }
+    
     else {
       if indexPath.row == 0 {
         guard let cell = feedCollectionView.dequeueReusableCell(withReuseIdentifier: "CatFeedPlusCell", for: indexPath) as? CatFeedPlusCell else { return UICollectionViewCell() }
@@ -96,7 +108,7 @@ extension CatDetailViewController: UICollectionViewDelegate, UICollectionViewDat
         let model = feedsModel?.feeds[indexPath.item]
         
         cell.titleLabel.text = model?.title
-        cell.descriptionLabel.text = ""
+        cell.descriptionLabel.text = model?.content
         
         return cell
         
@@ -107,7 +119,7 @@ extension CatDetailViewController: UICollectionViewDelegate, UICollectionViewDat
   }
   
   func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumLineSpacingForSectionAt section: Int) -> CGFloat {
-    if section == 0 {
+    if section == 0 || section == 1 {
       return 0
     }
     else {
@@ -117,7 +129,7 @@ extension CatDetailViewController: UICollectionViewDelegate, UICollectionViewDat
   }
   
   func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, insetForSectionAt section: Int) -> UIEdgeInsets {
-    if section == 0 {
+    if section == 0 || section == 1 {
       return UIEdgeInsets(top: 0, left: 0, bottom: 0, right: 0)
     }
     else {
@@ -127,7 +139,11 @@ extension CatDetailViewController: UICollectionViewDelegate, UICollectionViewDat
   
   func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
     if indexPath.section == 0 {
-      return CGSize(width: collectionView.frame.width, height: 490)
+      return CGSize(width: collectionView.frame.width, height: 390)
+    }
+    
+    else if indexPath.section == 1 {
+      return CGSize(width: collectionView.frame.width, height: 245)
     }
     
     else {
@@ -160,7 +176,7 @@ extension CatDetailViewController: UICollectionViewDelegate, UICollectionViewDat
         AF.request(request).responseData { response in
           switch response.result {
           case .success(_):
-            self.feedsModel?.feeds.append(InnerCatFeedsModel(id: param.feed.id, cat_id: param.feed.cat_id, title: param.feed.title))
+            self.feedsModel?.feeds.append(InnerCatFeedsModel(id: param.feed.id, cat_id: param.feed.cat_id, title: param.feed.title, content: param.feed.content))
             self.feedCollectionView.reloadData()
           case .failure(_):
             return
@@ -192,4 +208,24 @@ extension CatDetailViewController: UICollectionViewDelegate, UICollectionViewDat
   }
   
   
+}
+
+extension CatDetailViewController {
+  
+  // 피드 조회
+  func getCatImages(catId: String) {
+    AF.request("http://13.125.252.148:3000/albums/\(catId)", method: .get)
+      .validate()
+      .responseDecodable(of: CatAlbumResponse.self) { response in
+        switch response.result {
+        case .success(let result):
+          print(result.albums)
+          self.albums = result.albums
+          self.feedCollectionView.reloadData()
+          
+        case .failure(let error):
+          print("getCatImages failure")
+        }
+      }
+  }
 }
