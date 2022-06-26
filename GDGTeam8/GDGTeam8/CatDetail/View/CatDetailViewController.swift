@@ -184,11 +184,12 @@ extension CatDetailViewController: UICollectionViewDelegate, UICollectionViewDat
       }
       self.present(alert, animated: true)
       
-    } else {
-      let vc = FeedDetailViewController()
-      vc.hidesBottomBarWhenPushed = true
-      self.navigationController?.pushViewController(vc, animated: true)
     }
+//    else {
+//      let vc = FeedDetailViewController()
+//      vc.hidesBottomBarWhenPushed = true
+//      self.navigationController?.pushViewController(vc, animated: true)
+//    }
   }
   
   

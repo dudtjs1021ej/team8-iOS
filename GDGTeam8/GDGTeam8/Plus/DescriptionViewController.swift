@@ -86,13 +86,11 @@ extension DescriptionViewController {
       method: .post,
       headers: header
     )
-      .responseData { response in
-        print(response.value)
-      }
-    
-    
-//    { response in
-//          print(response.result)
-//        }
+    .responseDecodable(of: Bool.self) { response in
+      guard let result = response.value else { return }
+        if result {
+            NotificationCenter.default.post(name: Notification.Name.init(rawValue: "Complete"), object: nil)
+        }
+    }
   }
 }
